@@ -76,101 +76,226 @@
 // Activity 1: Arithmetic Operations
 
 // Task 1: Write a program to add two numbers and log the result to the console.
-let a=5
-let b=6
-let c=a+b
-console.log(c)
+// let a=5
+// let b=6
+// let c=a+b
+// console.log(c)
  
 
 
-// Task 2: Write a program to subtract two numbers and log the result to the console. Task 3: Write a program to multiply two numbers and log the result to the console.
-let d=5
-let e=6
-let f=d*e
-console.log(f)
-// Task 4: Write a program to divide two numbers and log the result to the console.
-    let g=5
-    let h=6
-    let i=g/h
-    console.log(i)
+// // Task 2: Write a program to subtract two numbers and log the result to the console. Task 3: Write a program to multiply two numbers and log the result to the console.
+// let d=5
+// let e=6
+// let f=d*e
+// console.log(f)
+// // Task 4: Write a program to divide two numbers and log the result to the console.
+//     let g=5
+//     let h=6
+//     let i=g/h
+//     console.log(i)
 
-// • Task 5: Write a program to find the remainder when one number is divided by another and log the result to the console.
-let j=5
-let k=6
-let l=j%k
-console.log(l)
+// // • Task 5: Write a program to find the remainder when one number is divided by another and log the result to the console.
+// let j=5
+// let k=6
+// let l=j%k
+// console.log(l)
 
-// Activity 2: Assignment Operators
+// // Activity 2: Assignment Operators
 
-// Task 6: Use the + operator to add a number to a variable and log the result to the console.
+// // Task 6: Use the + operator to add a number to a variable and log the result to the console.
 
-let m=5
-let n=6
-let o=m+n
-console.log(o)
+// let m=5
+// let n=6
+// let o=m+n
+// console.log(o)
 
-// • Task 7: Use the operator to subtract a number from a variable and log the result to the console.
+// // • Task 7: Use the operator to subtract a number from a variable and log the result to the console.
 
-let p=5
-let q=6
-let r=p-q
-console.log(r)
-// Activity 3: Comparison Operators
+// let p=5
+// let q=6
+// let r=p-q
+// console.log(r)
+// // Activity 3: Comparison Operators
 
-// Task 8: Write a program to compare two numbers using > and < and log the result to the console.
-let s=5
-let t=6
-let u=s<t
-console.log(u)
-
-
-// Task 9: Write a program to compare two numbers using >= and <= and log the result to the console.
-
-let v=5     
-let w=6
-let x=v<=w
-console.log(x)
-
-// Task 10: Write a program to compare two numbers using == and === and log the result to the console.
-
-let y=5
-let z=6
-let a1=y==z
-console.log(a1)
-
-let b1=5
-let c1=6
-let d1=b1===c1
-console.log(d1)
+// // Task 8: Write a program to compare two numbers using > and < and log the result to the console.
+// let s=5
+// let t=6
+// let u=s<t
+// console.log(u)
 
 
-// Activity 4: Logical Operators
+// // Task 9: Write a program to compare two numbers using >= and <= and log the result to the console.
 
-// Task 11: Write a program that uses the && operator to combine two conditions and log the result to the console. 
-let e1=5
-let f1=6
-if (e1==5 && f1==6){
-    console.log(true)
+// let v=5     
+// let w=6
+// let x=v<=w
+// console.log(x)
+
+// // Task 10: Write a program to compare two numbers using == and === and log the result to the console.
+
+// let y=5
+// let z=6
+// let a1=y==z
+// console.log(a1)
+
+// let b1=5
+// let c1=6
+// let d1=b1===c1
+// console.log(d1)
+
+
+// // Activity 4: Logical Operators
+
+// // Task 11: Write a program that uses the && operator to combine two conditions and log the result to the console. 
+// let e1=5
+// let f1=6
+// if (e1==5 && f1==6){
+//     console.log(true)
+// }
+
+
+// // Task 12: Write a program that uses the || operator to combine two conditions and log the result to the console.
+
+// let g1=5
+// let h1=34
+// if (g1==5 || h1==6){
+//     console.log(true)
+// }
+
+// // • Task 13: Write a program that uses the operator to negate a condition and log the result to the console.
+//   a3=true
+//   ~a3
+//   console.log(a3)
+
+
+// // Activity 5: Ternary Operator
+
+// // • Task 14: Write a program that uses the ternary operator to check if a number is positive or negative and log the result to the console.
+
+// let i1 = 5;
+// (i1 % 2 ==0) ? console.log("Even") : console.log("Odd")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Activity 1: If-Else Statements
+
+// Task 1: Write a program to check if a number is positive, negative, or zero, and log the result to the console.
+let a = 3;
+if (a > 0) {
+    console.log("Positive");
+} else if (a < 0) {
+    console.log("Negative");
+} else {
+    console.log("Zero");
 }
 
-
-// Task 12: Write a program that uses the || operator to combine two conditions and log the result to the console.
-
-let g1=5
-let h1=34
-if (g1==5 || h1==6){
-    console.log(true)
+// Task 2: Write a program to check if a person is eligible to vote (age >= 18) and log the result to the console.
+let b = 20;
+if (b >= 18) {
+    console.log("Eligible");
+} else {
+    console.log("Not Eligible");
 }
 
-// • Task 13: Write a program that uses the operator to negate a condition and log the result to the console.
-  a3=true
-  ~a3
-  console.log(a3)
+// Activity 2: Nested If-Else Statements
 
+// Task 3: Write a program to find the largest of three numbers using nested if-else statements.
+let c = 5;
+let d = 6;
+let e = 7;
+if (c > d) {
+    if (c > e) {
+        console.log(c);
+    } else {
+        console.log(e);
+    }
+} else {
+    if (d > e) {
+        console.log(d);
+    } else {
+        console.log(e);
+    }
+}
 
-// Activity 5: Ternary Operator
+// Activity 3: Switch Case
 
-// • Task 14: Write a program that uses the ternary operator to check if a number is positive or negative and log the result to the console.
+// Task 4: Write a program that uses a switch case to determine the day of the week based on a number (1-7) and log the day name to the console.
+let f = 5;
+switch (f) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    case 6:
+        console.log("Saturday");
+        break;
+    case 7:
+        console.log("Sunday");
+        break;
+    default:
+        console.log("Invalid day number");
+}
 
-let i1 = 5;
-(i1 % 2 ==0) ? console.log("Even") : console.log("Odd")
+// Task 5: Write a program that uses a switch case to assign a grade ('A', 'B', 'C', 'D', 'F) based on a score and log the grade to the console.
+let g = 5;
+switch (g) {
+    case 1:
+        console.log("A");
+        break;
+    case 2:
+        console.log("B");
+        break;
+    case 3:
+        console.log("C");
+        break;
+    case 4:
+        console.log("D");
+        break;
+    case 5:
+        console.log("F");
+        break;
+    default:
+        console.log("Invalid score");
+}
+
+// Activity 4: Conditional (Ternary) Operator
+
+// Task 6: Write a program that uses the ternary operator to check if a number is even or odd and log the result to the console.
+let h = 5;
+(h % 2 == 0) ? console.log("Even") : console.log("Odd");
+
+// Activity 5: Combining Conditions
+
+// Task 7: Write a program to check if a year is a leap year using multiple conditions (divisible by 4, but not 100 unless also divisible by 400) and log the result to the console.
+let i = 2024;
+if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+    console.log("Leap Year");
+} else {
+    console.log("Not Leap Year");
+}

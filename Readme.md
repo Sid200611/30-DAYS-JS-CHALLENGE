@@ -187,3 +187,149 @@ I'm excited to share that I've completed Day 2 of the "30 Days of JavaScript Cha
     let d1 = true;
     console.log(!d1);  // Output: false
     ```
+
+
+# Day 3: Control Structures
+
+I'm excited to share that I've completed Day 3 of the "30 Days of JavaScript Challenge" from Chai and Code! 🎉 Today, I focused on various fundamental JavaScript concepts related to control structures. Here’s a breakdown of the tasks and activities I tackled today:
+
+## Tasks/Activities
+
+### Activity 1: If-Else Statements
+
+1. **Check if a Number is Positive, Negative, or Zero**:
+   - **Answer**: Wrote a program to determine if a given number is positive, negative, or zero, and logged the result to the console.
+
+     ```javascript
+     let a = 3;
+     if (a > 0) {
+         console.log("Positive");
+     } else if (a < 0) {
+         console.log("Negative");
+     } else {
+         console.log("Zero");
+     }
+     ```
+
+2. **Check Voter Eligibility**:
+   - **Answer**: Wrote a program to check if a person is eligible to vote (age >= 18) and logged the result to the console.
+
+     ```javascript
+     let b = 20;
+     if (b >= 18) {
+         console.log("Eligible");
+     } else {
+         console.log("Not Eligible");
+     }
+     ```
+
+### Activity 2: Nested If-Else Statements
+
+3. **Find the Largest of Three Numbers**:
+   - **Answer**: Wrote a program to find the largest of three numbers using nested if-else statements.
+
+     ```javascript
+     let c = 5;
+     let d = 6;
+     let e = 7;
+     if (c > d) {
+         if (c > e) {
+             console.log(c);
+         } else {
+             console.log(e);
+         }
+     } else {
+         if (d > e) {
+             console.log(d);
+         } else {
+             console.log(e);
+         }
+     }
+     ```
+
+### Activity 3: Switch Case
+
+4. **Determine the Day of the Week**:
+   - **Answer**: Used a switch case to determine the day of the week based on a number (1-7) and logged the day name to the console.
+
+     ```javascript
+     let f = 5;
+     switch (f) {
+         case 1:
+             console.log("Monday");
+             break;
+         case 2:
+             console.log("Tuesday");
+             break;
+         case 3:
+             console.log("Wednesday");
+             break;
+         case 4:
+             console.log("Thursday");
+             break;
+         case 5:
+             console.log("Friday");
+             break;
+         case 6:
+             console.log("Saturday");
+             break;
+         case 7:
+             console.log("Sunday");
+             break;
+         default:
+             console.log("Invalid day number");
+     }
+     ```
+
+5. **Assign a Grade Based on a Score**:
+   - **Answer**: Used a switch case to assign a grade ('A', 'B', 'C', 'D', 'F') based on a score and logged the grade to the console.
+
+     ```javascript
+     let g = 5;
+     switch (g) {
+         case 1:
+             console.log("A");
+             break;
+         case 2:
+             console.log("B");
+             break;
+         case 3:
+             console.log("C");
+             break;
+         case 4:
+             console.log("D");
+             break;
+         case 5:
+             console.log("F");
+             break;
+         default:
+             console.log("Invalid score");
+     }
+     ```
+
+### Activity 4: Conditional (Ternary) Operator
+
+6. **Check if a Number is Even or Odd**:
+   - **Answer**: Used the ternary operator to check if a number is even or odd and logged the result to the console.
+
+     ```javascript
+     let h = 5;
+     (h % 2 == 0) ? console.log("Even") : console.log("Odd");
+     ```
+
+### Activity 5: Combining Conditions
+
+7. **Check if a Year is a Leap Year**:
+   - **Answer**: Wrote a program to check if a year is a leap year using multiple conditions (divisible by 4, but not 100 unless also divisible by 400) and logged the result to the console.
+
+     ```javascript
+     let i = 2024;
+     if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+         console.log("Leap Year");
+     } else {
+         console.log("Not Leap Year");
+     }
+     ```
+
+
+    
