@@ -331,5 +331,57 @@ I'm excited to share that I've completed Day 3 of the "30 Days of JavaScript Cha
      }
      ```
 
+# Day 4: Loops and Control Structures
+
+I'm excited to share that I've completed Day 4 of the "30 Days of JavaScript Challenge" from Chai and Code! 🎉 Today, I focused on various fundamental JavaScript concepts related to loops and control structures. Here’s a breakdown of the tasks and activities I tackled today:
+
+## Tasks/Activities
+
+### 1. for Loops
+
+1. **Print numbers from 1 to 10:**
+
+   Used a `for` loop to print numbers from 1 to 10.
+
+2. **Print the multiplication table of 5:**
+
+   Used a `for` loop to print the multiplication table of 5.
+
+### 2. while Loops
+
+1. **Calculate the sum of numbers from 1 to 10:**
+
+   Used a `while` loop to calculate the sum of numbers from 1 to 10 and logged the result to the console.
+
+2. **Print numbers from 10 to 1:**
+
+   Used a `while` loop to print numbers from 10 to 1.
+
+### 3. do-while Loops
+
+1. **Print numbers from 1 to 5:**
+
+   Used a `do-while` loop to print numbers from 1 to 5.
+
+2. **Calculate the factorial of a number:**
+
+   Wrote a function to calculate the factorial of a given number using a `do-while` loop.
+
+### 4. Nested Loops
+
+1. **Printing the pattern:**
+
+   Used nested `for` loops to print a pattern of stars (`*`) in increasing order, from one star to five stars.
+
+### 5. Loop Control Statements
+
+1. **Print numbers from 1 to 10, skipping 5:**
+
+   Used a `for` loop to print numbers from 1 to 10, but skipped the number 5 using a `continue` statement.
+
+2. **Print numbers from 1 to 10, stopping at 7:**
+
+   Used a `for` loop to print numbers from 1 to 10, but stopped the loop when it reached the number 7 using a `break` statement.
+
 
     
