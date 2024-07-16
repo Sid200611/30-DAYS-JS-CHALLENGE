@@ -192,110 +192,223 @@
 
 
 
-// Activity 1: If-Else Statements
+// // Activity 1: If-Else Statements
 
-// Task 1: Write a program to check if a number is positive, negative, or zero, and log the result to the console.
-let a = 3;
-if (a > 0) {
-    console.log("Positive");
-} else if (a < 0) {
-    console.log("Negative");
-} else {
-    console.log("Zero");
+// // Task 1: Write a program to check if a number is positive, negative, or zero, and log the result to the console.
+// let a = 3;
+// if (a > 0) {
+//     console.log("Positive");
+// } else if (a < 0) {
+//     console.log("Negative");
+// } else {
+//     console.log("Zero");
+// }
+
+// // Task 2: Write a program to check if a person is eligible to vote (age >= 18) and log the result to the console.
+// let b = 20;
+// if (b >= 18) {
+//     console.log("Eligible");
+// } else {
+//     console.log("Not Eligible");
+// }
+
+// // Activity 2: Nested If-Else Statements
+
+// // Task 3: Write a program to find the largest of three numbers using nested if-else statements.
+// let c = 5;
+// let d = 6;
+// let e = 7;
+// if (c > d) {
+//     if (c > e) {
+//         console.log(c);
+//     } else {
+//         console.log(e);
+//     }
+// } else {
+//     if (d > e) {
+//         console.log(d);
+//     } else {
+//         console.log(e);
+//     }
+// }
+
+// // Activity 3: Switch Case
+
+// // Task 4: Write a program that uses a switch case to determine the day of the week based on a number (1-7) and log the day name to the console.
+// let f = 5;
+// switch (f) {
+//     case 1:
+//         console.log("Monday");
+//         break;
+//     case 2:
+//         console.log("Tuesday");
+//         break;
+//     case 3:
+//         console.log("Wednesday");
+//         break;
+//     case 4:
+//         console.log("Thursday");
+//         break;
+//     case 5:
+//         console.log("Friday");
+//         break;
+//     case 6:
+//         console.log("Saturday");
+//         break;
+//     case 7:
+//         console.log("Sunday");
+//         break;
+//     default:
+//         console.log("Invalid day number");
+// }
+
+// // Task 5: Write a program that uses a switch case to assign a grade ('A', 'B', 'C', 'D', 'F) based on a score and log the grade to the console.
+// let g = 5;
+// switch (g) {
+//     case 1:
+//         console.log("A");
+//         break;
+//     case 2:
+//         console.log("B");
+//         break;
+//     case 3:
+//         console.log("C");
+//         break;
+//     case 4:
+//         console.log("D");
+//         break;
+//     case 5:
+//         console.log("F");
+//         break;
+//     default:
+//         console.log("Invalid score");
+// }
+
+// // Activity 4: Conditional (Ternary) Operator
+
+// // Task 6: Write a program that uses the ternary operator to check if a number is even or odd and log the result to the console.
+// let h = 5;
+// (h % 2 == 0) ? console.log("Even") : console.log("Odd");
+
+// // Activity 5: Combining Conditions
+
+// // Task 7: Write a program to check if a year is a leap year using multiple conditions (divisible by 4, but not 100 unless also divisible by 400) and log the result to the console.
+// let i = 2024;
+// if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+//     console.log("Leap Year");
+// } else {
+//     console.log("Not Leap Year");
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1. for Loops:
+
+// Print numbers from 1 to 10:
+// 
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
 }
 
-// Task 2: Write a program to check if a person is eligible to vote (age >= 18) and log the result to the console.
-let b = 20;
-if (b >= 18) {
-    console.log("Eligible");
-} else {
-    console.log("Not Eligible");
+
+// Print the multiplication table of 5:
+
+for (let i = 1; i <= 10; i++) {
+  console.log(5 * i);
 }
 
-// Activity 2: Nested If-Else Statements
 
-// Task 3: Write a program to find the largest of three numbers using nested if-else statements.
-let c = 5;
-let d = 6;
-let e = 7;
-if (c > d) {
-    if (c > e) {
-        console.log(c);
-    } else {
-        console.log(e);
-    }
-} else {
-    if (d > e) {
-        console.log(d);
-    } else {
-        console.log(e);
-    }
+// 2. while Loops:
+
+// Calculate the sum of numbers from 1 to 10:
+
+let sum = 0;
+let i = 1;
+while (i <= 10) {
+  sum += i;
+  i++;
+}
+console.log("Sum:", sum);
+
+
+// Print numbers from 10 to 1:
+
+let q = 10;
+while (i >= 1) {
+  console.log(i);
+  i--;
 }
 
-// Activity 3: Switch Case
 
-// Task 4: Write a program that uses a switch case to determine the day of the week based on a number (1-7) and log the day name to the console.
-let f = 5;
-switch (f) {
-    case 1:
-        console.log("Monday");
-        break;
-    case 2:
-        console.log("Tuesday");
-        break;
-    case 3:
-        console.log("Wednesday");
-        break;
-    case 4:
-        console.log("Thursday");
-        break;
-    case 5:
-        console.log("Friday");
-        break;
-    case 6:
-        console.log("Saturday");
-        break;
-    case 7:
-        console.log("Sunday");
-        break;
-    default:
-        console.log("Invalid day number");
+// 3. do-while Loops:
+
+// Print numbers from 1 to 5:
+
+let h = 1;
+do {
+  console.log(i);
+  i++;
+} while (i <= 5);
+
+
+// Calculate the factorial of a number (assuming the number is provided as an input):
+
+function factorial(number) {
+  let result = 1;
+  let i = 1;
+  do {
+    result *= i;
+    i++;
+  } while (i <= number);
+  return result;
 }
 
-// Task 5: Write a program that uses a switch case to assign a grade ('A', 'B', 'C', 'D', 'F) based on a score and log the grade to the console.
-let g = 5;
-switch (g) {
-    case 1:
-        console.log("A");
-        break;
-    case 2:
-        console.log("B");
-        break;
-    case 3:
-        console.log("C");
-        break;
-    case 4:
-        console.log("D");
-        break;
-    case 5:
-        console.log("F");
-        break;
-    default:
-        console.log("Invalid score");
+
+const num = 5;
+const fact = factorial(num);
+console.log("Factorial of", num, ":", fact);
+
+
+// 4. Nested Loops (Printing the pattern):
+
+
+for (let i = 1; i <= 5; i++) {
+  let stars = "";
+  for (let j = 1; j <= i; j++) {
+    stars += "*";
+  }
+  console.log(stars);
 }
 
-// Activity 4: Conditional (Ternary) Operator
 
-// Task 6: Write a program that uses the ternary operator to check if a number is even or odd and log the result to the console.
-let h = 5;
-(h % 2 == 0) ? console.log("Even") : console.log("Odd");
+// 5. Loop Control Statements:
 
-// Activity 5: Combining Conditions
+// Print numbers from 1 to 10, skipping 5:
 
-// Task 7: Write a program to check if a year is a leap year using multiple conditions (divisible by 4, but not 100 unless also divisible by 400) and log the result to the console.
-let i = 2024;
-if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
-    console.log("Leap Year");
-} else {
-    console.log("Not Leap Year");
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    continue; 
+  }
+  console.log(i);
+}
+
+
+// Print numbers from 1 to 10, stopping at 7:
+
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+  if (i === 7) {
+    break; 
+  }
 }
