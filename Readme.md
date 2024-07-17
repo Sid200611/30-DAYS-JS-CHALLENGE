@@ -384,4 +384,143 @@ I'm excited to share that I've completed Day 4 of the "30 Days of JavaScript Cha
    Used a `for` loop to print numbers from 1 to 10, but stopped the loop when it reached the number 7 using a `break` statement.
 
 
+
+
+
+
+
+# Day 5: Functions
+
+## Tasks/Activities:
+
+### Activity 1: Function Declaration
+
+#### Task 1: Write a function to check if a number is even or odd and log the result to the console.
+```javascript
+function checkEvenOdd(number) {
+  if (number % 2 === 0) {
+      console.log(\`\${number} is even\`);
+  } else {
+      console.log(\`\${number} is odd\`);
+  }
+}
+
+// Example usage
+checkEvenOdd(4); // Output: 4 is even
+checkEvenOdd(7); // Output: 7 is odd
+```
+
+#### Task 2: Write a function to calculate the square of a number and return the result.
+```javascript
+function square(number) {
+  return number * number;
+}
+
+// Example usage
+console.log(square(5)); // Output: 25
+console.log(square(9)); // Output: 81
+```
+
+### Activity 2: Function Expression
+
+#### Task 3: Write a function expression to find the maximum of two numbers and log the result to the console.
+```javascript
+const findMax = function(a, b) {
+  if (a > b) {
+      console.log(\`Maximum is \${a}\`);
+  } else {
+      console.log(\`Maximum is \${b}\`);
+  }
+}
+
+// Example usage
+findMax(10, 15); // Output: Maximum is 15
+findMax(23, 8);  // Output: Maximum is 23
+```
+
+#### Task 4: Write a function expression to concatenate two strings and return the result.
+```javascript
+const concatenateStrings = function(str1, str2) {
+  return str1 + str2;
+}
+
+// Example usage
+console.log(concatenateStrings('Hello, ', 'World!')); // Output: Hello, World!
+console.log(concatenateStrings('Foo', 'Bar')); // Output: FooBar
+```
+
+### Activity 3: Arrow Functions
+
+#### Task 5: Write an arrow function to calculate the sum of two numbers and return the result.
+```javascript
+const sum = (a, b) => a + b;
+
+// Example usage
+console.log(sum(5, 10)); // Output: 15
+console.log(sum(20, 30)); // Output: 50
+```
+
+#### Task 6: Write an arrow function to check if a string contains a specific character and return a boolean value.
+```javascript
+const containsCharacter = (str, char) => str.includes(char);
+
+// Example usage
+console.log(containsCharacter('Hello', 'e')); // Output: true
+console.log(containsCharacter('World', 'a')); // Output: false
+```
+
+### Activity 4: Function Parameters and Default Values
+
+#### Task 7: Write a function that takes two parameters and returns their product. Provide a default value for the second parameter.
+```javascript
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+// Example usage
+console.log(multiply(5, 3)); // Output: 15
+console.log(multiply(7));    // Output: 7 (since b defaults to 1)
+```
+
+#### Task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
+```javascript
+function greet(name, age = 18) {
+  return \`Hello, \${name}! You are \${age} years old.\`;
+}
+
+// Example usage
+console.log(greet('Alice', 25)); // Output: Hello, Alice! You are 25 years old.
+console.log(greet('Bob'));       // Output: Hello, Bob! You are 18 years old.
+```
+
+### Activity 5: Higher-Order Functions
+
+#### Task 10: Write a higher-order function that takes two functions and a value, applies the first function to the value, and then applies the second function to the result.
+```javascript
+function applyFunctions(func1, func2, value) {
+  return func2(func1(value));
+}
+
+// Example usage
+const double = x => x * 2;
+const increment = x => x + 1;
+
+console.log(applyFunctions(double, increment, 5)); // Output: 11 (5*2 + 1)
+```
+
+#### Task 9: Write a higher-order function that takes a function and a number, and calls the function that many times.
+```javascript
+function repeatFunction(func, times) {
+  for (let i = 0; i < times; i++) {
+      func();
+  }
+}
+
+// Example usage
+const sayHello = () => console.log('Hello!');
+
+repeatFunction(sayHello, 3); // Output: Hello! (3 times)
+```
+
+
     
