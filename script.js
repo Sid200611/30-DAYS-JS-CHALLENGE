@@ -432,106 +432,181 @@
 // Activity 1: Function Declaration
 
 // • Task 1: Write a function to check if a number is even or odd and log the result to the console.
-function checkEvenOdd(number) {
-  if (number % 2 === 0) {
-      console.log(`${number} is even`);
-  } else {
-      console.log(`${number} is odd`);
-  }
+// function checkEvenOdd(number) {
+//   if (number % 2 === 0) {
+//       console.log(`${number} is even`);
+//   } else {
+//       console.log(`${number} is odd`);
+//   }
+// }
+
+// // Example usage
+// checkEvenOdd(4); // Output: 4 is even
+// checkEvenOdd(7); // Output: 7 is odd
+
+// // • Task 2: Write a function to calculate the square of a number and return the result.
+// function square(number) {
+//   return number * number;
+// }
+
+// // Example usage
+// console.log(square(5)); // Output: 25
+// console.log(square(9)); // Output: 81
+
+
+// // Activity 2: Function Expression
+
+// // Task 3: Write a function expression to find the maximum of two numbers and log the result to the console.
+// const findMax = function(a, b) {
+//   if (a > b) {
+//       console.log(`Maximum is ${a}`);
+//   } else {
+//       console.log(`Maximum is ${b}`);
+//   }
+// }
+
+// // Example usage
+// findMax(10, 15); 
+// findMax(23, 8);  
+// // Task 4: Write a function expression to concatenate two strings and return the result.
+// const concatenateStrings = function(str1, str2) {
+//   return str1 + str2;
+// }
+
+// // Example usage
+// console.log(concatenateStrings('Hello, ', 'World!')); 
+// console.log(concatenateStrings('Foo', 'Bar')); 
+// // Activity 3: Arrow Functions
+
+// // Task 5: Write an arrow function to calculate the sum of two numbers and return the result.
+// const sum = (a, b) => a + b;
+
+// // Example usage
+// console.log(sum(5, 10)); 
+// console.log(sum(20, 30)); 
+
+// // Task 6: Write an arrow function to check if a string contains a specific character and return a boolean value.
+// const containsCharacter = (str, char) => str.includes(char);
+
+// // Example usage
+// console.log(containsCharacter('Hello', 'e')); 
+// console.log(containsCharacter('World', 'a')); 
+// // Activity 4: Function Parameters and Default Values
+
+// // Task 7: Write a function that takes two parameters and returns their product. Provide a default value for the second parameter.
+// function multiply(a, b = 1) {
+//   return a * b;
+// }
+
+// // Example usage
+// console.log(multiply(5, 3)); 
+// console.log(multiply(7));    
+
+// // Task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
+// function greet(name, age = 18) {
+//   return `Hello, ${name}! You are ${age} years old.`;
+// }
+
+// // Example usage
+// console.log(greet('Alice', 25)); 
+// console.log(greet('Bob'));       
+// // Activity 5: Higher-Order Functions
+
+// // Task 10: Write a higher-order function that takes two functions and a value, applies the first function to the value, and then applies the second function to the result.
+// function applyFunctions(func1, func2, value) {
+//   return func2(func1(value));
+// }
+
+// // Example usage
+// const double = x => x * 2;
+// const increment = x => x + 1;
+
+// console.log(applyFunctions(double, increment, 5)); 
+
+// // Task 9: Write a higher-order function that takes a function and a number, and calls the function that many times.
+// function repeatFunction(func, times) {
+//   for (let i = 0; i < times; i++) {
+//       func();
+//   }
+// }
+
+// // Example usage
+// const sayHello = () => console.log('Hello!');
+
+// repeatFunction(sayHello, 3); 
+
+
+// Day 6: Arrays
+
+// Tasks/Activities:
+
+// Activity 1: Array Creation and Access
+
+// Task 1: Create an array of numbers from 1 to 5 and log the array to the console.
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+
+// Task 2: Access the first and last elements of the array and log them to the console.
+let firstElement = numbers[0];
+let lastElement = numbers[numbers.length - 1];
+console.log(firstElement, lastElement);
+
+// Activity 2: Array Methods (Basic)
+
+// Task 3: Use the push method to add a new number to the end of the array and log the updated array.
+numbers.push(6);
+console.log(numbers);
+
+// Task 4: Use the pop method to remove the last element from the array and log the updated array.
+numbers.pop();
+console.log(numbers);
+
+// • Task 5: Use the shift method to remove the first element from the array and log the updated array.
+numbers.shift();
+console.log(numbers);
+
+// Task 6: Use the unshift method to add a new number to the beginning of the array and log the updated array.
+numbers.unshift(0);
+console.log(numbers);
+
+// Activity 3: Array Methods (Intermediate)
+
+// Task 7: Use the map method to create a new array where each number is doubled and log the new array.
+let doubledNumbers = numbers.map(num => num * 2);
+console.log(doubledNumbers);
+
+// Task 8: Use the filter method to create a new array with only even numbers and log the new array.
+let evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers);
+
+// Task 9: Use the reduce method to calculate the sum of all numbers in the array and log the result.
+let sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum);
+
+// Activity 4: Array Iteration
+
+// Task 10: Use a for loop to iterate over the array and log each element to the console.
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
 }
 
-// Example usage
-checkEvenOdd(4); // Output: 4 is even
-checkEvenOdd(7); // Output: 7 is odd
+// • Task 11: Use the forEach method to iterate over the array and log each element to the console.
 
-// • Task 2: Write a function to calculate the square of a number and return the result.
-function square(number) {
-  return number * number;
-}
-
-// Example usage
-console.log(square(5)); // Output: 25
-console.log(square(9)); // Output: 81
+numbers.forEach(num => console.log(num));
 
 
-// Activity 2: Function Expression
 
-// Task 3: Write a function expression to find the maximum of two numbers and log the result to the console.
-const findMax = function(a, b) {
-  if (a > b) {
-      console.log(`Maximum is ${a}`);
-  } else {
-      console.log(`Maximum is ${b}`);
-  }
-}
+// Activity 5: Multi-dimensional Arrays
 
-// Example usage
-findMax(10, 15); 
-findMax(23, 8);  
-// Task 4: Write a function expression to concatenate two strings and return the result.
-const concatenateStrings = function(str1, str2) {
-  return str1 + str2;
-}
+// Task 12: Create a two-dimensional array (matrix) and log the entire array to the console.
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+console.log(matrix);
 
-// Example usage
-console.log(concatenateStrings('Hello, ', 'World!')); 
-console.log(concatenateStrings('Foo', 'Bar')); 
-// Activity 3: Arrow Functions
+// Task 13: Access and log a specific element from the two-dimensional array.
 
-// Task 5: Write an arrow function to calculate the sum of two numbers and return the result.
-const sum = (a, b) => a + b;
 
-// Example usage
-console.log(sum(5, 10)); 
-console.log(sum(20, 30)); 
-
-// Task 6: Write an arrow function to check if a string contains a specific character and return a boolean value.
-const containsCharacter = (str, char) => str.includes(char);
-
-// Example usage
-console.log(containsCharacter('Hello', 'e')); 
-console.log(containsCharacter('World', 'a')); 
-// Activity 4: Function Parameters and Default Values
-
-// Task 7: Write a function that takes two parameters and returns their product. Provide a default value for the second parameter.
-function multiply(a, b = 1) {
-  return a * b;
-}
-
-// Example usage
-console.log(multiply(5, 3)); 
-console.log(multiply(7));    
-
-// Task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age.
-function greet(name, age = 18) {
-  return `Hello, ${name}! You are ${age} years old.`;
-}
-
-// Example usage
-console.log(greet('Alice', 25)); 
-console.log(greet('Bob'));       
-// Activity 5: Higher-Order Functions
-
-// Task 10: Write a higher-order function that takes two functions and a value, applies the first function to the value, and then applies the second function to the result.
-function applyFunctions(func1, func2, value) {
-  return func2(func1(value));
-}
-
-// Example usage
-const double = x => x * 2;
-const increment = x => x + 1;
-
-console.log(applyFunctions(double, increment, 5)); 
-
-// Task 9: Write a higher-order function that takes a function and a number, and calls the function that many times.
-function repeatFunction(func, times) {
-  for (let i = 0; i < times; i++) {
-      func();
-  }
-}
-
-// Example usage
-const sayHello = () => console.log('Hello!');
-
-repeatFunction(sayHello, 3); 
-
+let specificElement = matrix[1][1]; // Accessing the element in the second row
