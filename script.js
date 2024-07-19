@@ -542,71 +542,167 @@
 
 // Activity 1: Array Creation and Access
 
-// Task 1: Create an array of numbers from 1 to 5 and log the array to the console.
-let numbers = [1, 2, 3, 4, 5];
-console.log(numbers);
+// // Task 1: Create an array of numbers from 1 to 5 and log the array to the console.
+// let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers);
 
-// Task 2: Access the first and last elements of the array and log them to the console.
-let firstElement = numbers[0];
-let lastElement = numbers[numbers.length - 1];
-console.log(firstElement, lastElement);
+// // Task 2: Access the first and last elements of the array and log them to the console.
+// let firstElement = numbers[0];
+// let lastElement = numbers[numbers.length - 1];
+// console.log(firstElement, lastElement);
 
-// Activity 2: Array Methods (Basic)
+// // Activity 2: Array Methods (Basic)
 
-// Task 3: Use the push method to add a new number to the end of the array and log the updated array.
-numbers.push(6);
-console.log(numbers);
+// // Task 3: Use the push method to add a new number to the end of the array and log the updated array.
+// numbers.push(6);
+// console.log(numbers);
 
-// Task 4: Use the pop method to remove the last element from the array and log the updated array.
-numbers.pop();
-console.log(numbers);
+// // Task 4: Use the pop method to remove the last element from the array and log the updated array.
+// numbers.pop();
+// console.log(numbers);
 
-// • Task 5: Use the shift method to remove the first element from the array and log the updated array.
-numbers.shift();
-console.log(numbers);
+// // • Task 5: Use the shift method to remove the first element from the array and log the updated array.
+// numbers.shift();
+// console.log(numbers);
 
-// Task 6: Use the unshift method to add a new number to the beginning of the array and log the updated array.
-numbers.unshift(0);
-console.log(numbers);
+// // Task 6: Use the unshift method to add a new number to the beginning of the array and log the updated array.
+// numbers.unshift(0);
+// console.log(numbers);
 
-// Activity 3: Array Methods (Intermediate)
+// // Activity 3: Array Methods (Intermediate)
 
-// Task 7: Use the map method to create a new array where each number is doubled and log the new array.
-let doubledNumbers = numbers.map(num => num * 2);
-console.log(doubledNumbers);
+// // Task 7: Use the map method to create a new array where each number is doubled and log the new array.
+// let doubledNumbers = numbers.map(num => num * 2);
+// console.log(doubledNumbers);
 
-// Task 8: Use the filter method to create a new array with only even numbers and log the new array.
-let evenNumbers = numbers.filter(num => num % 2 === 0);
-console.log(evenNumbers);
+// // Task 8: Use the filter method to create a new array with only even numbers and log the new array.
+// let evenNumbers = numbers.filter(num => num % 2 === 0);
+// console.log(evenNumbers);
 
-// Task 9: Use the reduce method to calculate the sum of all numbers in the array and log the result.
-let sum = numbers.reduce((acc, num) => acc + num, 0);
-console.log(sum);
+// // Task 9: Use the reduce method to calculate the sum of all numbers in the array and log the result.
+// let sum = numbers.reduce((acc, num) => acc + num, 0);
+// console.log(sum);
 
-// Activity 4: Array Iteration
+// // Activity 4: Array Iteration
 
-// Task 10: Use a for loop to iterate over the array and log each element to the console.
-for (let i = 0; i < numbers.length; i++) {
-  console.log(numbers[i]);
+// // Task 10: Use a for loop to iterate over the array and log each element to the console.
+// for (let i = 0; i < numbers.length; i++) {
+//   console.log(numbers[i]);
+// }
+
+// // • Task 11: Use the forEach method to iterate over the array and log each element to the console.
+
+// numbers.forEach(num => console.log(num));
+
+
+
+// // Activity 5: Multi-dimensional Arrays
+
+// // Task 12: Create a two-dimensional array (matrix) and log the entire array to the console.
+// let matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+// console.log(matrix);
+
+// // Task 13: Access and log a specific element from the two-dimensional array.
+
+
+// let specificElement = matrix[1][1]; // Accessing the element in the second row
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Day 7: Objects
+
+// Tasks/Activities:
+
+// Activity 1: Object Creation and Access
+
+// Task 1: Create an object representing a book with properties like title, author, and year, and log the object to the console.
+let book = {
+  title: "To Kill a Mockingbird",
+  author: "Harper Lee",
+  year: 1960
+};
+console.log(book); 
+// Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 }
+
+// Task 2: Access and log the title and author properties of the book object.
+console.log(book.title); // Output: "To Kill a Mockingbird"
+console.log(book.author); // Output: "Harper Lee"
+
+// Activity 2: Object Methods
+
+// Task 3: Add a method to the book object that returns a string with the book's title and author, and log the result of calling this method. 
+book.getDetails = function() {
+  return `${this.title} by ${this.author}`;
+};
+console.log(book.getDetails()); 
+// Output: "To Kill a Mockingbird by Harper Lee"
+
+// • Task 4: Add a method to the book object that takes a parameter (year) and updates the book's year property, then log the updated object.
+book.updateYear = function(newYear) {
+  this.year = newYear;
+};
+book.updateYear(2020);
+console.log(book); 
+// Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] }
+
+// Activity 3: Nested Objects
+
+// Task 5: Create a nested object representing a library with properties like name and books (an array of book objects), and log the library object to the console.
+let library = {
+  name: "City Library",
+  books: [
+    { title: "1984", author: "George Orwell", year: 1949 },
+    { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+    book
+  ]
+};
+console.log(library); 
+// Output: { name: "City Library", books: [ { title: "1984", author: "George Orwell", year: 1949 }, { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 }, { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] } ] }
+
+// Task 6: Access and log the name of the library and the titles of all the books in the library.
+console.log(library.name); // Output: "City Library"
+library.books.forEach(book => console.log(book.title));
+// Output: 
+// "1984"
+// "The Great Gatsby"
+// "To Kill a Mockingbird"
+
+// Activity 4: The this Keyword
+
+// Task 7: Add a method to the book object that uses the this keyword to return a string with the book's title and year, and log the result of calling this method.
+book.getTitleAndYear = function() {
+  return `${this.title} (${this.year})`;
+};
+console.log(book.getTitleAndYear()); 
+// Output: "To Kill a Mockingbird (2020)"
+
+// Activity 5: Object Iteration
+
+// Task 8: Use a for...in loop to iterate over the properties of the book object and log each property and its value.
+for (let key in book) {
+  if (book.hasOwnProperty(key)) {
+    console.log(`${key}: ${book[key]}`);
+  }
 }
 
-// • Task 11: Use the forEach method to iterate over the array and log each element to the console.
 
-numbers.forEach(num => console.log(num));
-
-
-
-// Activity 5: Multi-dimensional Arrays
-
-// Task 12: Create a two-dimensional array (matrix) and log the entire array to the console.
-let matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-];
-console.log(matrix);
-
-// Task 13: Access and log a specific element from the two-dimensional array.
-
-
-let specificElement = matrix[1][1]; // Accessing the element in the second row
+// Task 9: Use Object.keys and Object.values methods to log all the keys and values of the book object.
+console.log(Object.keys(book)); 
+// Output: ["title", "author", "year", "getDetails", "updateYear", "getTitleAndYear"]
+console.log(Object.values(book)); 
+// Output: ["To Kill a Mockingbird", "Harper Lee", 2020, function() { ... }, function() { ... }, function() { ... }]
