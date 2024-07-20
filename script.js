@@ -626,83 +626,167 @@
 
 // Day 7: Objects
 
+// // Tasks/Activities:
+
+// // Activity 1: Object Creation and Access
+
+// // Task 1: Create an object representing a book with properties like title, author, and year, and log the object to the console.
+// let book = {
+//   title: "To Kill a Mockingbird",
+//   author: "Harper Lee",
+//   year: 1960
+// };
+// console.log(book); 
+// // Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 }
+
+// // Task 2: Access and log the title and author properties of the book object.
+// console.log(book.title); // Output: "To Kill a Mockingbird"
+// console.log(book.author); // Output: "Harper Lee"
+
+// // Activity 2: Object Methods
+
+// // Task 3: Add a method to the book object that returns a string with the book's title and author, and log the result of calling this method. 
+// book.getDetails = function() {
+//   return `${this.title} by ${this.author}`;
+// };
+// console.log(book.getDetails()); 
+// // Output: "To Kill a Mockingbird by Harper Lee"
+
+// // • Task 4: Add a method to the book object that takes a parameter (year) and updates the book's year property, then log the updated object.
+// book.updateYear = function(newYear) {
+//   this.year = newYear;
+// };
+// book.updateYear(2020);
+// console.log(book); 
+// // Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] }
+
+// // Activity 3: Nested Objects
+
+// // Task 5: Create a nested object representing a library with properties like name and books (an array of book objects), and log the library object to the console.
+// let library = {
+//   name: "City Library",
+//   books: [
+//     { title: "1984", author: "George Orwell", year: 1949 },
+//     { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
+//     book
+//   ]
+// };
+// console.log(library); 
+// // Output: { name: "City Library", books: [ { title: "1984", author: "George Orwell", year: 1949 }, { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 }, { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] } ] }
+
+// // Task 6: Access and log the name of the library and the titles of all the books in the library.
+// console.log(library.name); // Output: "City Library"
+// library.books.forEach(book => console.log(book.title));
+// // Output: 
+// // "1984"
+// // "The Great Gatsby"
+// // "To Kill a Mockingbird"
+
+// // Activity 4: The this Keyword
+
+// // Task 7: Add a method to the book object that uses the this keyword to return a string with the book's title and year, and log the result of calling this method.
+// book.getTitleAndYear = function() {
+//   return `${this.title} (${this.year})`;
+// };
+// console.log(book.getTitleAndYear()); 
+// // Output: "To Kill a Mockingbird (2020)"
+
+// // Activity 5: Object Iteration
+
+// // Task 8: Use a for...in loop to iterate over the properties of the book object and log each property and its value.
+// for (let key in book) {
+//   if (book.hasOwnProperty(key)) {
+//     console.log(`${key}: ${book[key]}`);
+//   }
+// }
+
+
+// // Task 9: Use Object.keys and Object.values methods to log all the keys and values of the book object.
+// console.log(Object.keys(book)); 
+// // Output: ["title", "author", "year", "getDetails", "updateYear", "getTitleAndYear"]
+// console.log(Object.values(book)); 
+// // Output: ["To Kill a Mockingbird", "Harper Lee", 2020, function() { ... }, function() { ... }, function() { ... }]
+
+
+
+
+
+
+// Day 8: ES6+ Features
+
 // Tasks/Activities:
 
-// Activity 1: Object Creation and Access
+// Activity 1: Template Literals
 
-// Task 1: Create an object representing a book with properties like title, author, and year, and log the object to the console.
-let book = {
-  title: "To Kill a Mockingbird",
-  author: "Harper Lee",
-  year: 1960
+// Task 1: Use template literals to create a string that includes variables for a person's name and age, and log the string to the console.
+const name = "John";
+const age = 30;
+const message = `My name is ${name} and I am ${age} years old.`;
+console.log(message);
+
+// Task 2: Create a multi-line string using template literals and l and log it to the console.
+const multiLineString = `This is a multi-line string.
+It spans multiple lines.
+And it's very easy to create using template literals.`;
+console.log(multiLineString);
+
+// Activity 2: Destructuring
+
+// Task 3: Use array destructuring to extract the first and second elements from an array of numbers and log them to the console.
+const numbers = [1, 2, 3, 4, 5];
+const [first, second] = numbers;
+console.log(first, second); // 1 2
+
+// • Task 4: Use object destructuring to extract the title and author from a book object and log them to the console.
+const book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  year: 1925
 };
-console.log(book); 
-// Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960 }
+const { title, author } = book;
+console.log(title, author); // The Great Gatsby F. Scott Fitzgerald
 
-// Task 2: Access and log the title and author properties of the book object.
-console.log(book.title); // Output: "To Kill a Mockingbird"
-console.log(book.author); // Output: "Harper Lee"
+// Activity 3: Spread and Rest Operators
 
-// Activity 2: Object Methods
+// Task 5: Use the spread operator to create a new array that includes all elements of an existing array plus additional elements, and log the newlyray to the console.
+const originalArray = [1, 2, 3];
+const newArray = [...originalArray, 4, 5, 6];
+console.log(newArray); // [1, 2, 3, 4, 5, 6]
 
-// Task 3: Add a method to the book object that returns a string with the book's title and author, and log the result of calling this method. 
-book.getDetails = function() {
-  return `${this.title} by ${this.author}`;
-};
-console.log(book.getDetails()); 
-// Output: "To Kill a Mockingbird by Harper Lee"
-
-// • Task 4: Add a method to the book object that takes a parameter (year) and updates the book's year property, then log the updated object.
-book.updateYear = function(newYear) {
-  this.year = newYear;
-};
-book.updateYear(2020);
-console.log(book); 
-// Output: { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] }
-
-// Activity 3: Nested Objects
-
-// Task 5: Create a nested object representing a library with properties like name and books (an array of book objects), and log the library object to the console.
-let library = {
-  name: "City Library",
-  books: [
-    { title: "1984", author: "George Orwell", year: 1949 },
-    { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 },
-    book
-  ]
-};
-console.log(library); 
-// Output: { name: "City Library", books: [ { title: "1984", author: "George Orwell", year: 1949 }, { title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: 1925 }, { title: "To Kill a Mockingbird", author: "Harper Lee", year: 2020, getDetails: [Function], updateYear: [Function] } ] }
-
-// Task 6: Access and log the name of the library and the titles of all the books in the library.
-console.log(library.name); // Output: "City Library"
-library.books.forEach(book => console.log(book.title));
-// Output: 
-// "1984"
-// "The Great Gatsby"
-// "To Kill a Mockingbird"
-
-// Activity 4: The this Keyword
-
-// Task 7: Add a method to the book object that uses the this keyword to return a string with the book's title and year, and log the result of calling this method.
-book.getTitleAndYear = function() {
-  return `${this.title} (${this.year})`;
-};
-console.log(book.getTitleAndYear()); 
-// Output: "To Kill a Mockingbird (2020)"
-
-// Activity 5: Object Iteration
-
-// Task 8: Use a for...in loop to iterate over the properties of the book object and log each property and its value.
-for (let key in book) {
-  if (book.hasOwnProperty(key)) {
-    console.log(`${key}: ${book[key]}`);
-  }
+// Task 6: Use the rest operator in a function to accept an arbitrary number of arguments, sum them, and return the result.
+function sum(...args) {
+  return args.reduce((acc, curr) => acc + curr, 0);
 }
+console.log(sum(1, 2, 3, 4, 5)); // 15
 
+// Activity 4: Default Parameters
 
-// Task 9: Use Object.keys and Object.values methods to log all the keys and values of the book object.
-console.log(Object.keys(book)); 
-// Output: ["title", "author", "year", "getDetails", "updateYear", "getTitleAndYear"]
-console.log(Object.values(book)); 
-// Output: ["To Kill a Mockingbird", "Harper Lee", 2020, function() { ... }, function() { ... }, function() { ... }]
+// Task 7: Write a function that takes two parameters and returns their product, with the second parameter having a default value of 1. Log the result of calling this function with and without the second parameter.
+function multiply(a, b = 1) {
+  return a * b;
+}
+console.log(multiply(5, 2)); // 10
+console.log(multiply(5)); // 5
+
+// Activity 5: Enhanced Object Literals
+
+// Task 8: Use enhanced object literals to create an object with methods and properties, and log the object to the console. 
+const name1 = "Alice";
+const age2 = 25;
+const person = {
+  name1,
+  age2,
+  greet() {
+    console.log(`Hello, my name is ${this.name1} and I am ${this.age2} years old.`);
+  }
+};
+console.log(person);
+person.greet(); // Hello, my name is Alice and I am 25 years old.
+// Task 9: Create an object with computed property names based on variables and log the object to the console.
+const propName = "favoriteColor";
+const propValue = "blue";
+const obj = {
+  [propName]: propValue
+};
+console.log(obj); // { favoriteColor: "blue" }
+
