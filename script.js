@@ -719,74 +719,136 @@
 // Activity 1: Template Literals
 
 // Task 1: Use template literals to create a string that includes variables for a person's name and age, and log the string to the console.
-const name = "John";
-const age = 30;
-const message = `My name is ${name} and I am ${age} years old.`;
-console.log(message);
+// const name = "John";
+// const age = 30;
+// const message = `My name is ${name} and I am ${age} years old.`;
+// console.log(message);
 
-// Task 2: Create a multi-line string using template literals and l and log it to the console.
-const multiLineString = `This is a multi-line string.
-It spans multiple lines.
-And it's very easy to create using template literals.`;
-console.log(multiLineString);
+// // Task 2: Create a multi-line string using template literals and l and log it to the console.
+// const multiLineString = `This is a multi-line string.
+// It spans multiple lines.
+// And it's very easy to create using template literals.`;
+// console.log(multiLineString);
 
-// Activity 2: Destructuring
+// // Activity 2: Destructuring
 
-// Task 3: Use array destructuring to extract the first and second elements from an array of numbers and log them to the console.
-const numbers = [1, 2, 3, 4, 5];
-const [first, second] = numbers;
-console.log(first, second); // 1 2
+// // Task 3: Use array destructuring to extract the first and second elements from an array of numbers and log them to the console.
+// const numbers = [1, 2, 3, 4, 5];
+// const [first, second] = numbers;
+// console.log(first, second); // 1 2
 
-// • Task 4: Use object destructuring to extract the title and author from a book object and log them to the console.
-const book = {
-  title: "The Great Gatsby",
-  author: "F. Scott Fitzgerald",
-  year: 1925
-};
-const { title, author } = book;
-console.log(title, author); // The Great Gatsby F. Scott Fitzgerald
+// // • Task 4: Use object destructuring to extract the title and author from a book object and log them to the console.
+// const book = {
+//   title: "The Great Gatsby",
+//   author: "F. Scott Fitzgerald",
+//   year: 1925
+// };
+// const { title, author } = book;
+// console.log(title, author); // The Great Gatsby F. Scott Fitzgerald
 
-// Activity 3: Spread and Rest Operators
+// // Activity 3: Spread and Rest Operators
 
-// Task 5: Use the spread operator to create a new array that includes all elements of an existing array plus additional elements, and log the newlyray to the console.
-const originalArray = [1, 2, 3];
-const newArray = [...originalArray, 4, 5, 6];
-console.log(newArray); // [1, 2, 3, 4, 5, 6]
+// // Task 5: Use the spread operator to create a new array that includes all elements of an existing array plus additional elements, and log the newlyray to the console.
+// const originalArray = [1, 2, 3];
+// const newArray = [...originalArray, 4, 5, 6];
+// console.log(newArray); // [1, 2, 3, 4, 5, 6]
 
-// Task 6: Use the rest operator in a function to accept an arbitrary number of arguments, sum them, and return the result.
-function sum(...args) {
-  return args.reduce((acc, curr) => acc + curr, 0);
-}
-console.log(sum(1, 2, 3, 4, 5)); // 15
+// // Task 6: Use the rest operator in a function to accept an arbitrary number of arguments, sum them, and return the result.
+// function sum(...args) {
+//   return args.reduce((acc, curr) => acc + curr, 0);
+// }
+// console.log(sum(1, 2, 3, 4, 5)); // 15
 
-// Activity 4: Default Parameters
+// // Activity 4: Default Parameters
 
-// Task 7: Write a function that takes two parameters and returns their product, with the second parameter having a default value of 1. Log the result of calling this function with and without the second parameter.
-function multiply(a, b = 1) {
-  return a * b;
-}
-console.log(multiply(5, 2)); // 10
-console.log(multiply(5)); // 5
+// // Task 7: Write a function that takes two parameters and returns their product, with the second parameter having a default value of 1. Log the result of calling this function with and without the second parameter.
+// function multiply(a, b = 1) {
+//   return a * b;
+// }
+// console.log(multiply(5, 2)); // 10
+// console.log(multiply(5)); // 5
 
-// Activity 5: Enhanced Object Literals
+// // Activity 5: Enhanced Object Literals
 
-// Task 8: Use enhanced object literals to create an object with methods and properties, and log the object to the console. 
-const name1 = "Alice";
-const age2 = 25;
-const person = {
-  name1,
-  age2,
-  greet() {
-    console.log(`Hello, my name is ${this.name1} and I am ${this.age2} years old.`);
-  }
-};
-console.log(person);
-person.greet(); // Hello, my name is Alice and I am 25 years old.
-// Task 9: Create an object with computed property names based on variables and log the object to the console.
-const propName = "favoriteColor";
-const propValue = "blue";
-const obj = {
-  [propName]: propValue
-};
-console.log(obj); // { favoriteColor: "blue" }
+// // Task 8: Use enhanced object literals to create an object with methods and properties, and log the object to the console. 
+// const name1 = "Alice";
+// const age2 = 25;
+// const person = {
+//   name1,
+//   age2,
+//   greet() {
+//     console.log(`Hello, my name is ${this.name1} and I am ${this.age2} years old.`);
+//   }
+// };
+// console.log(person);
+// person.greet(); // Hello, my name is Alice and I am 25 years old.
+// // Task 9: Create an object with computed property names based on variables and log the object to the console.
+// const propName = "favoriteColor";
+// const propValue = "blue";
+// const obj = {
+//   [propName]: propValue
+// };
+// console.log(obj); // { favoriteColor: "blue" }
 
+
+
+
+
+
+
+
+
+// Day 9: DOM Manipulation
+
+// Tasks/Activities:
+
+// Activity 1: Selecting and Manipulating Elements
+
+// Task 1: Select an HTML element by its ID and change its text content. 
+document.getElementById('myElement').textContent = 'New Text Content';
+// • Task 2: Select an HTML element by its class and change its background color.
+document.querySelector('.myClass').style.backgroundColor = 'blue';
+
+// Activity 2: Creating and Appending Elements
+
+// Task 3: Create a new div element with some text content and append it to the body.
+const newDiv = document.createElement('div');
+newDiv.textContent = 'This is a new div';
+document.body.appendChild(newDiv);
+
+// Task 4: Create a new 11 element and add it to an existing ul list.
+const newLi = document.createElement('li');
+newLi.textContent = 'New list item';
+document.querySelector('ul').appendChild(newLi);
+
+// Activity 3: Removing Elements
+
+// Task 5: Select an HTML element and remove it from the DOM.
+const elementToRemove = document.getElementById('elementToRemove');
+elementToRemove.parentNode.removeChild(elementToRemove);
+
+// Task 6: Remove the last child of a specific HTML element.
+const parentElement = document.getElementById('parentElement');
+parentElement.removeChild(parentElement.lastElementChild);
+
+// Activity 4: Modifying Attributes and Classes
+
+// Task 7: Select an HTML element and change one of its attributes (e.g., src of an ing tag).
+document.querySelector('img').setAttribute('src', 'newImageSource.jpg');
+
+// Task 8: Add and remove a CSS class to/from an HTML element.
+const element = document.querySelector('.myElement');
+element.classList.add('newClass');
+element.classList.remove('oldClass');
+
+// Activity 5: Event Handling
+
+// Task 9: Add a click event listener to a button that changes the text content of a paragraph.
+document.querySelector('button').addEventListener('click', () => {
+  document.querySelector('p').textContent = 'Text has been changed!';
+});
+
+// Task 10: Add a mouseover event listener to an element that changes its border color
+document.querySelector('.myElement').addEventListener('mouseover', () => {
+  document.querySelector('.myElement').style.borderColor = 'red';
+});
