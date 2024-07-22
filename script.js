@@ -805,50 +805,106 @@
 // Activity 1: Selecting and Manipulating Elements
 
 // Task 1: Select an HTML element by its ID and change its text content. 
-document.getElementById('myElement').textContent = 'New Text Content';
-// • Task 2: Select an HTML element by its class and change its background color.
-document.querySelector('.myClass').style.backgroundColor = 'blue';
+// document.getElementById('myElement').textContent = 'New Text Content';
+// // • Task 2: Select an HTML element by its class and change its background color.
+// document.querySelector('.myClass').style.backgroundColor = 'blue';
 
-// Activity 2: Creating and Appending Elements
+// // Activity 2: Creating and Appending Elements
 
-// Task 3: Create a new div element with some text content and append it to the body.
-const newDiv = document.createElement('div');
-newDiv.textContent = 'This is a new div';
-document.body.appendChild(newDiv);
+// // Task 3: Create a new div element with some text content and append it to the body.
+// const newDiv = document.createElement('div');
+// newDiv.textContent = 'This is a new div';
+// document.body.appendChild(newDiv);
 
-// Task 4: Create a new 11 element and add it to an existing ul list.
-const newLi = document.createElement('li');
-newLi.textContent = 'New list item';
-document.querySelector('ul').appendChild(newLi);
+// // Task 4: Create a new 11 element and add it to an existing ul list.
+// const newLi = document.createElement('li');
+// newLi.textContent = 'New list item';
+// document.querySelector('ul').appendChild(newLi);
 
-// Activity 3: Removing Elements
+// // Activity 3: Removing Elements
 
-// Task 5: Select an HTML element and remove it from the DOM.
-const elementToRemove = document.getElementById('elementToRemove');
-elementToRemove.parentNode.removeChild(elementToRemove);
+// // Task 5: Select an HTML element and remove it from the DOM.
+// const elementToRemove = document.getElementById('elementToRemove');
+// elementToRemove.parentNode.removeChild(elementToRemove);
 
-// Task 6: Remove the last child of a specific HTML element.
-const parentElement = document.getElementById('parentElement');
-parentElement.removeChild(parentElement.lastElementChild);
+// // Task 6: Remove the last child of a specific HTML element.
+// const parentElement = document.getElementById('parentElement');
+// parentElement.removeChild(parentElement.lastElementChild);
 
-// Activity 4: Modifying Attributes and Classes
+// // Activity 4: Modifying Attributes and Classes
 
-// Task 7: Select an HTML element and change one of its attributes (e.g., src of an ing tag).
-document.querySelector('img').setAttribute('src', 'newImageSource.jpg');
+// // Task 7: Select an HTML element and change one of its attributes (e.g., src of an ing tag).
+// document.querySelector('img').setAttribute('src', 'newImageSource.jpg');
 
-// Task 8: Add and remove a CSS class to/from an HTML element.
-const element = document.querySelector('.myElement');
-element.classList.add('newClass');
-element.classList.remove('oldClass');
+// // Task 8: Add and remove a CSS class to/from an HTML element.
+// const element = document.querySelector('.myElement');
+// element.classList.add('newClass');
+// element.classList.remove('oldClass');
 
-// Activity 5: Event Handling
+// // Activity 5: Event Handling
 
-// Task 9: Add a click event listener to a button that changes the text content of a paragraph.
-document.querySelector('button').addEventListener('click', () => {
+// // Task 9: Add a click event listener to a button that changes the text content of a paragraph.
+// document.querySelector('button').addEventListener('click', () => {
+//   document.querySelector('p').textContent = 'Text has been changed!';
+// });
+
+// // Task 10: Add a mouseover event listener to an element that changes its border color
+// document.querySelector('.myElement').addEventListener('mouseover', () => {
+//   document.querySelector('.myElement').style.borderColor = 'red';
+// });
+
+
+
+
+
+
+// ### Tasks/Activities:
+
+// #### Activity 1: Basic Event Handling
+// - *Task 1*: Add a click event listener to a button that changes the text content of a paragraph.
+addEventListener('click', () => {
   document.querySelector('p').textContent = 'Text has been changed!';
-});
+})
+// - *Task 2*: Add a double-click event listener to an image that toggles its visibility.
+addEventListener('dblclick', () => {
+  document.querySelector('img').style.opacity = '0';
+})
 
-// Task 10: Add a mouseover event listener to an element that changes its border color
-document.querySelector('.myElement').addEventListener('mouseover', () => {
-  document.querySelector('.myElement').style.borderColor = 'red';
-});
+// #### Activity 2: Mouse Events
+// - *Task 3*: Add a mouseover event listener to an element that changes its background color.
+addEventListener('mouseover', () => {
+  document.querySelector('.myElement').style.backgroundColor = 'red';
+})
+// - *Task 4*: Add a mouseout event listener to an element that resets its background color.
+addEventListener('mouseout', () => {
+  document.querySelector('.myElement').style.backgroundColor = 'white';
+})
+
+// #### Activity 3: Keyboard Events
+// - *Task 5*: Add a keydown event listener to an input field that logs the key pressed to the console.
+addEventListener('keydown', (event) => {
+  console.log(event.key);
+})
+// - *Task 6*: Add a keyup event listener to an input field that displays the current value in a paragraph.
+addEventListener('keyup', (event) => {
+  document.querySelector('p').textContent = event.target.value;
+})
+
+// #### Activity 4: Form Events
+// - *Task 7*: Add a submit event listener to a form that prevents the default submission and logs the form data to the console.
+addEventListener('submit', (event) => {
+  event.preventDefault();
+})
+// - *Task 8*: Add a change event listener to a select dropdown that displays the selected value in a paragraph.
+addEventListener('change', (event) => {
+  document.querySelector('p').textContent = event.target.value;
+})
+// #### Activity 5: Event Delegation
+// - *Task 9*: Add a click event listener to a list that logs the text content of the clicked list item using event delegation.
+addEventListener('click', (event) => {
+  console.log(event.target.textContent);
+})
+// - *Task 10*: Add an event listener to a parent element that listens for events from dynamically added child elements.
+addEventListener('click', (event) => {
+  console.log(event.target.textContent);
+})
