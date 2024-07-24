@@ -1047,7 +1047,7 @@
 
 
 
-// Day 12: Error Handling
+// Day 12: Error Handlin
 
 // Tasks/Activities:
 
