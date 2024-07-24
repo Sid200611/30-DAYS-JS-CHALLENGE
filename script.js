@@ -858,53 +858,336 @@
 
 
 
-// ### Tasks/Activities:
+// // ### Tasks/Activities:
 
-// #### Activity 1: Basic Event Handling
-// - *Task 1*: Add a click event listener to a button that changes the text content of a paragraph.
-addEventListener('click', () => {
-  document.querySelector('p').textContent = 'Text has been changed!';
-})
-// - *Task 2*: Add a double-click event listener to an image that toggles its visibility.
-addEventListener('dblclick', () => {
-  document.querySelector('img').style.opacity = '0';
-})
+// // #### Activity 1: Basic Event Handling
+// // - *Task 1*: Add a click event listener to a button that changes the text content of a paragraph.
+// addEventListener('click', () => {
+//   document.querySelector('p').textContent = 'Text has been changed!';
+// })
+// // - *Task 2*: Add a double-click event listener to an image that toggles its visibility.
+// addEventListener('dblclick', () => {
+//   document.querySelector('img').style.opacity = '0';
+// })
 
-// #### Activity 2: Mouse Events
-// - *Task 3*: Add a mouseover event listener to an element that changes its background color.
-addEventListener('mouseover', () => {
-  document.querySelector('.myElement').style.backgroundColor = 'red';
-})
-// - *Task 4*: Add a mouseout event listener to an element that resets its background color.
-addEventListener('mouseout', () => {
-  document.querySelector('.myElement').style.backgroundColor = 'white';
-})
+// // #### Activity 2: Mouse Events
+// // - *Task 3*: Add a mouseover event listener to an element that changes its background color.
+// addEventListener('mouseover', () => {
+//   document.querySelector('.myElement').style.backgroundColor = 'red';
+// })
+// // - *Task 4*: Add a mouseout event listener to an element that resets its background color.
+// addEventListener('mouseout', () => {
+//   document.querySelector('.myElement').style.backgroundColor = 'white';
+// })
 
-// #### Activity 3: Keyboard Events
-// - *Task 5*: Add a keydown event listener to an input field that logs the key pressed to the console.
-addEventListener('keydown', (event) => {
-  console.log(event.key);
-})
-// - *Task 6*: Add a keyup event listener to an input field that displays the current value in a paragraph.
-addEventListener('keyup', (event) => {
-  document.querySelector('p').textContent = event.target.value;
-})
+// // #### Activity 3: Keyboard Events
+// // - *Task 5*: Add a keydown event listener to an input field that logs the key pressed to the console.
+// addEventListener('keydown', (event) => {
+//   console.log(event.key);
+// })
+// // - *Task 6*: Add a keyup event listener to an input field that displays the current value in a paragraph.
+// addEventListener('keyup', (event) => {
+//   document.querySelector('p').textContent = event.target.value;
+// })
 
-// #### Activity 4: Form Events
-// - *Task 7*: Add a submit event listener to a form that prevents the default submission and logs the form data to the console.
-addEventListener('submit', (event) => {
-  event.preventDefault();
+// // #### Activity 4: Form Events
+// // - *Task 7*: Add a submit event listener to a form that prevents the default submission and logs the form data to the console.
+// addEventListener('submit', (event) => {
+//   event.preventDefault();
+// })
+// // - *Task 8*: Add a change event listener to a select dropdown that displays the selected value in a paragraph.
+// addEventListener('change', (event) => {
+//   document.querySelector('p').textContent = event.target.value;
+// })
+// // #### Activity 5: Event Delegation
+// // - *Task 9*: Add a click event listener to a list that logs the text content of the clicked list item using event delegation.
+// addEventListener('click', (event) => {
+//   console.log(event.target.textContent);
+// })
+// // - *Task 10*: Add an event listener to a parent element that listens for events from dynamically added child elements.
+// addEventListener('click', (event) => {
+//   console.log(event.target.textContent);
+// })
+
+
+
+
+
+// // Day 11: Promises and Async/Await
+
+// // Tasks/Activities:
+
+// // Activity 1: Understanding Promises
+
+// // Task 1: Create a promise that resolves with a message after a 2-second timeout and log the message to the console.
+// const promise1 = new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve("Promise resolved after 2 seconds");
+//     }, 2000);
+//   });
+  
+//   promise1.then((message) => {
+//     console.log(message);
+//   });
+  
+// // Task 2: Create a promise that rejects with an error message after a 2-second timeout and handle the error using catch().
+// const promise2 = new Promise((_, reject) => {
+//     setTimeout(() => {
+//       reject("Promise rejected after 2 seconds");
+//     }, 2000);
+//   });
+  
+//   promise2.catch((error) => {
+//     console.error(error);
+//   });
+  
+// // Activity 2: Chaining Promises
+
+// // Task 3: Create a sequence of promises that simulate fetching data from a server. Chain the promises to log messages in a specific order.
+// const fetchData = (data) => {
+//     return new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve(data);
+//       }, 1000);
+//     });
+//   };
+  
+//   fetchData("Fetching user data")
+//     .then((message) => {
+//       console.log(message);
+//       return fetchData("Fetching posts data");
+//     })
+//     .then((message) => {
+//       console.log(message);
+//       return fetchData("Fetching comments data");
+//     })
+//     .then((message) => {
+//       console.log(message);
+//     });
+  
+// // Activity 3: Using Async/Await
+
+// // Task 4: Write an async function that waits for a promise to resolve and then logs the resolved value.
+// const asyncFunction = async () => {
+//     const promise = new Promise((resolve) => {
+//       setTimeout(() => {
+//         resolve("Resolved value");
+//       }, 2000);
+//     });
+  
+//     const result = await promise;
+//     console.log(result);
+//   };
+  
+//   asyncFunction();
+  
+// // Task 5: Write an async function that handles a rejected promise using try-catch and logs the error message.
+// const asyncFunctionWithError = async () => {
+//     const promise = new Promise((_, reject) => {
+//       setTimeout(() => {
+//         reject("Error occurred");
+//       }, 2000);
+//     });
+  
+//     try {
+//       const result = await promise;
+//       console.log(result);
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
+  
+//   asyncFunctionWithError();
+  
+// // Activity 4: Fetching Data from an A
+
+// // Task 6: Use the fetch API to get data from a public API and log the response data to the console using promises.
+// fetch('https://api.publicapis.org/entries')
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.error('Error fetching data:', error);
+//   });
+
+// // • Task 7: Use the fetch API to get data from a public API and log the response data to the console using async/await.
+// const fetchDataAsync = async () => {
+//     try {
+//       const response = await fetch('https://api.publicapis.org/entries');
+//       const data = await response.json();
+//       console.log(data);
+//     } catch (error) {
+//       console.error('Error fetching data:', error);
+//     }
+//   };
+  
+//   fetchDataAsync();
+  
+// // Activity 5: Concurrent Promises
+
+// // Task 8: Use Promise.all to wait for multiple promises to resolve and then log all their values.
+// const promiseA = new Promise((resolve) => setTimeout(resolve, 1000, "Promise A"));
+// const promiseB = new Promise((resolve) => setTimeout(resolve, 2000, "Promise B"));
+// const promiseC = new Promise((resolve) => setTimeout(resolve, 3000, "Promise C"));
+
+// Promise.all([promiseA, promiseB, promiseC]).then((values) => {
+//   console.log(values); // ["Promise A", "Promise B", "Promise C"]
+// });
+
+// // Task 9: Use Promise.race to log the value of the first promise that resolves among multiple promises.
+// const promiseX = new Promise((resolve) => setTimeout(resolve, 1000, "Promise X"));
+// const promiseY = new Promise((resolve) => setTimeout(resolve, 2000, "Promise Y"));
+// const promiseZ = new Promise((resolve) => setTimeout(resolve, 3000, "Promise Z"));
+
+// Promise.race([promiseX, promiseY, promiseZ]).then((value) => {
+//   console.log(value); // "Promise X"
+// });
+
+
+
+
+// Day 12: Error Handling
+
+// Tasks/Activities:
+
+// Activity 1: Basic Error Handling with Try-Catch
+
+// Task 1: Write a function that intentionally throws an error and use a try-catch block to handle the error and log an appropriate message to the console.
+function throwError() {
+  throw new Error('Intentional Error');
+}
+
+try {
+  throwError();
+} catch (error) {
+  console.error('Caught an error:', error.message);
+}
+
+// Task 2: Create a function that divides two numbers and throws an error if the denominator is zero. Use a try-catch block to handle this error.
+function divide(a, b) {
+  if (b === 0) {
+      throw new Error('Cannot divide by zero');
+  }
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 0));
+} catch (error) {
+  console.error('Error:', error.message);
+}
+
+// Activity 2: Finally Block
+
+// Task 3: Write a script that includes a try-qatch block and a finally block. Log messages in the try, catch, and finally blocks to observe the execution flow.
+try {
+  console.log('In try block');
+  throw new Error('Error in try block');
+} catch (error) {
+  console.error('In catch block:', error.message);
+} finally {
+  console.log('In finally block');
+}
+
+// Activity 3: Custom Error Objects
+
+// Task 4: Create a custom error class that extends the built-in Error class. Throw an instance of this custom error in a function and handle it using a try catch block.
+class CustomError extends Error {
+  constructor(message) {
+      super(message);
+      this.name = 'CustomError';
+  }
+}
+
+function throwCustomError() {
+  throw new CustomError('This is a custom error');
+}
+
+try {
+  throwCustomError();
+} catch (error) {
+  console.error(`${error.name}: ${error.message}`);
+}
+
+// Task 5: Write a function that validates user input (e.g., checking if a string is not empty) and throws a custom error if the validation fails. Handle the custom error using a try-catch block.
+class ValidationError extends Error {
+  constructor(message) {
+      super(message);
+      this.name = 'ValidationError';
+  }
+}
+
+function validateInput(input) {
+  if (input.trim() === '') {
+      throw new ValidationError('Input cannot be empty');
+  }
+  return true;
+}
+
+try {
+  validateInput('');
+} catch (error) {
+  console.error(`${error.name}: ${error.message}`);
+}
+
+// Activity 4: Error Handling in Promises
+
+const randomPromise = new Promise((resolve, reject) => {
+  const randomNumber = Math.random();
+  if (randomNumber > 0.5) {
+    resolve('Promise resolved');
+  } else {
+    reject(new Error('Promise rejected'));
+  }
+});
+
+randomPromise
+.then((message) => {
+  console.log(message);
 })
-// - *Task 8*: Add a change event listener to a select dropdown that displays the selected value in a paragraph.
-addEventListener('change', (event) => {
-  document.querySelector('p').textContent = event.target.value;
-})
-// #### Activity 5: Event Delegation
-// - *Task 9*: Add a click event listener to a list that logs the text content of the clicked list item using event delegation.
-addEventListener('click', (event) => {
-  console.log(event.target.textContent);
-})
-// - *Task 10*: Add an event listener to a parent element that listens for events from dynamically added child elements.
-addEventListener('click', (event) => {
-  console.log(event.target.textContent);
-})
+.catch((error) => {
+  console.error('Error:', error.message);
+});
+// Task 6: Create a promise that randomly resolves or rejects. Use .catch() to handle the rejection and log an appropriate message to the console. Task 7: Use try-catch within an async function to handle errors from a promise that randomly resolves or rejects, and log the error message.
+
+  async function handleRandomPromise() {
+    const randomPromise = new Promise((resolve, reject) => {
+        const randomNumber = Math.random();
+        if (randomNumber > 0.5) {
+            resolve('Promise resolved');
+        } else {
+            reject(new Error('Promise rejected'));
+        }
+    });
+  
+    try {
+        const result = await randomPromise;
+        console.log(result);
+    } catch (error) {
+        console.error('Caught an error:', error.message);
+    }
+  }
+  
+  handleRandomPromise();
+// Activity 5: Graceful Error Handling in Fetch
+
+// • Task 8: Use the fetch API to request data from an invalid URL and handle the error using .catch(). Log an appropriate error message to the console.
+fetch('https://invalidurl.example')
+    .then((response) => response.json())
+    .catch((error) => {
+        console.error('Fetch error:', error.message);
+    });
+
+// Task 9: Use the fetch API to request data from an invalid URL within an async function and handle the error using try-catch. Log an appropriate error message.
+async function fetchInvalidURL() {
+  try {
+      const response = await fetch('https://invalidurl.example');
+      const data = await response.json();
+      console.log(data);
+  } catch (error) {
+      console.error('Fetch error:', error.message);
+  }
+}
+
+fetchInvalidURL();
