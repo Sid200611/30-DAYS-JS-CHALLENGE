@@ -1054,140 +1054,287 @@
 // Activity 1: Basic Error Handling with Try-Catch
 
 // Task 1: Write a function that intentionally throws an error and use a try-catch block to handle the error and log an appropriate message to the console.
-function throwError() {
-  throw new Error('Intentional Error');
-}
+// function throwError() {
+//   throw new Error('Intentional Error');
+// }
 
-try {
-  throwError();
-} catch (error) {
-  console.error('Caught an error:', error.message);
-}
+// try {
+//   throwError();
+// } catch (error) {
+//   console.error('Caught an error:', error.message);
+// }
 
-// Task 2: Create a function that divides two numbers and throws an error if the denominator is zero. Use a try-catch block to handle this error.
-function divide(a, b) {
-  if (b === 0) {
-      throw new Error('Cannot divide by zero');
+// // Task 2: Create a function that divides two numbers and throws an error if the denominator is zero. Use a try-catch block to handle this error.
+// function divide(a, b) {
+//   if (b === 0) {
+//       throw new Error('Cannot divide by zero');
+//   }
+//   return a / b;
+// }
+
+// try {
+//   console.log(divide(10, 0));
+// } catch (error) {
+//   console.error('Error:', error.message);
+// }
+
+// // Activity 2: Finally Block
+
+// // Task 3: Write a script that includes a try-qatch block and a finally block. Log messages in the try, catch, and finally blocks to observe the execution flow.
+// try {
+//   console.log('In try block');
+//   throw new Error('Error in try block');
+// } catch (error) {
+//   console.error('In catch block:', error.message);
+// } finally {
+//   console.log('In finally block');
+// }
+
+// // Activity 3: Custom Error Objects
+
+// // Task 4: Create a custom error class that extends the built-in Error class. Throw an instance of this custom error in a function and handle it using a try catch block.
+// class CustomError extends Error {
+//   constructor(message) {
+//       super(message);
+//       this.name = 'CustomError';
+//   }
+// }
+
+// function throwCustomError() {
+//   throw new CustomError('This is a custom error');
+// }
+
+// try {
+//   throwCustomError();
+// } catch (error) {
+//   console.error(`${error.name}: ${error.message}`);
+// }
+
+// // Task 5: Write a function that validates user input (e.g., checking if a string is not empty) and throws a custom error if the validation fails. Handle the custom error using a try-catch block.
+// class ValidationError extends Error {
+//   constructor(message) {
+//       super(message);
+//       this.name = 'ValidationError';
+//   }
+// }
+
+// function validateInput(input) {
+//   if (input.trim() === '') {
+//       throw new ValidationError('Input cannot be empty');
+//   }
+//   return true;
+// }
+
+// try {
+//   validateInput('');
+// } catch (error) {
+//   console.error(`${error.name}: ${error.message}`);
+// }
+
+// // Activity 4: Error Handling in Promises
+
+// const randomPromise = new Promise((resolve, reject) => {
+//   const randomNumber = Math.random();
+//   if (randomNumber > 0.5) {
+//     resolve('Promise resolved');
+//   } else {
+//     reject(new Error('Promise rejected'));
+//   }
+// });
+
+// randomPromise
+// .then((message) => {
+//   console.log(message);
+// })
+// .catch((error) => {
+//   console.error('Error:', error.message);
+// });
+// // Task 6: Create a promise that randomly resolves or rejects. Use .catch() to handle the rejection and log an appropriate message to the console. Task 7: Use try-catch within an async function to handle errors from a promise that randomly resolves or rejects, and log the error message.
+
+//   async function handleRandomPromise() {
+//     const randomPromise = new Promise((resolve, reject) => {
+//         const randomNumber = Math.random();
+//         if (randomNumber > 0.5) {
+//             resolve('Promise resolved');
+//         } else {
+//             reject(new Error('Promise rejected'));
+//         }
+//     });
+  
+//     try {
+//         const result = await randomPromise;
+//         console.log(result);
+//     } catch (error) {
+//         console.error('Caught an error:', error.message);
+//     }
+//   }
+  
+//   handleRandomPromise();
+// // Activity 5: Graceful Error Handling in Fetch
+
+// // • Task 8: Use the fetch API to request data from an invalid URL and handle the error using .catch(). Log an appropriate error message to the console.
+// fetch('https://invalidurl.example')
+//     .then((response) => response.json())
+//     .catch((error) => {
+//         console.error('Fetch error:', error.message);
+//     });
+
+// // Task 9: Use the fetch API to request data from an invalid URL within an async function and handle the error using try-catch. Log an appropriate error message.
+// async function fetchInvalidURL() {
+//   try {
+//       const response = await fetch('https://invalidurl.example');
+//       const data = await response.json();
+//       console.log(data);
+//   } catch (error) {
+//       console.error('Fetch error:', error.message);
+//   }
+// }
+
+// fetchInvalidURL();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Day 15: Closures
+
+// Tasks/Activities:
+
+// Activity 1: Understanding Closures
+
+// Task 1: Write a function that returns another function, where the inner function accesses a variable from the outer function's scope. Call the inner function and log the result.
+function outerFunction() {
+  let outerVariable = "I'm from outer scope";
+  return function innerFunction() {
+      console.log(outerVariable);
   }
-  return a / b;
 }
 
-try {
-  console.log(divide(10, 0));
-} catch (error) {
-  console.error('Error:', error.message);
-}
+const myFunction = outerFunction();
+myFunction(); // Logs: "I'm from outer scope"
 
-// Activity 2: Finally Block
-
-// Task 3: Write a script that includes a try-qatch block and a finally block. Log messages in the try, catch, and finally blocks to observe the execution flow.
-try {
-  console.log('In try block');
-  throw new Error('Error in try block');
-} catch (error) {
-  console.error('In catch block:', error.message);
-} finally {
-  console.log('In finally block');
-}
-
-// Activity 3: Custom Error Objects
-
-// Task 4: Create a custom error class that extends the built-in Error class. Throw an instance of this custom error in a function and handle it using a try catch block.
-class CustomError extends Error {
-  constructor(message) {
-      super(message);
-      this.name = 'CustomError';
+// • Task 2: Create a closure that maintains a private counter. Implement functions to increment and get the current value of the counter.
+function createCounter() {
+  let count = 0;
+  return {
+      increment: function() {
+          count++;
+      },
+      getCount: function() {
+          return count;
+      }
   }
 }
 
-function throwCustomError() {
-  throw new CustomError('This is a custom error');
-}
+const counter = createCounter();
+counter.increment();
+console.log(counter.getCount()); // Logs: 1
 
-try {
-  throwCustomError();
-} catch (error) {
-  console.error(`${error.name}: ${error.message}`);
-}
 
-// Task 5: Write a function that validates user input (e.g., checking if a string is not empty) and throws a custom error if the validation fails. Handle the custom error using a try-catch block.
-class ValidationError extends Error {
-  constructor(message) {
-      super(message);
-      this.name = 'ValidationError';
+// Activity 2: Practical Closures
+
+// Task 3: Write a function that generates unique IDs. Use a closure to keep track of the last generated ID and increment it with each call. 
+function idGenerator() {
+  let lastId = 0;
+  return function() {
+      lastId++;
+      return lastId;
   }
 }
 
-function validateInput(input) {
-  if (input.trim() === '') {
-      throw new ValidationError('Input cannot be empty');
+const generateId = idGenerator();
+console.log(generateId()); // Logs: 1
+console.log(generateId()); // Logs: 2
+
+// Task 4: Create a closure that captures a user's name and returns a function that greets the user by name.
+function greetUser(name) {
+  return function() {
+      console.log(`Hello, ${name}!`);
   }
-  return true;
 }
 
-try {
-  validateInput('');
-} catch (error) {
-  console.error(`${error.name}: ${error.message}`);
+const greetJohn = greetUser('John');
+greetJohn(); // Logs: "Hello, John!"
+
+// Activity 3: Closures in Loops
+
+// Task 5: Write a loop that creates an array of functions. Each function should log its index when called. Use a closure to ensure each function logs the correct index.
+function createFunctions() {
+  let functions = [];
+  for (let i = 0; i < 5; i++) {
+      functions.push((function(index) {
+          return function() {
+              console.log(index);
+          }
+      })(i));
+  }
+  return functions;
 }
 
-// Activity 4: Error Handling in Promises
+const funcs = createFunctions();
+funcs[0](); // Logs: 0
+funcs[1](); // Logs: 1
 
-const randomPromise = new Promise((resolve, reject) => {
-  const randomNumber = Math.random();
-  if (randomNumber > 0.5) {
-    resolve('Promise resolved');
-  } else {
-    reject(new Error('Promise rejected'));
+// Activity 4: Module Pattern
+
+// Task 6: Use closures to create a simple module for managing a collection of items. Implement methods to add, remove, and list items.
+function createCollection() {
+  let items = [];
+  return {
+      addItem: function(item) {
+          items.push(item);
+      },
+      removeItem: function(item) {
+          items = items.filter(i => i !== item);
+      },
+      listItems: function() {
+          return items;
+      }
   }
+}
+
+const myCollection = createCollection();
+myCollection.addItem('Apple');
+myCollection.addItem('Banana');
+console.log(myCollection.listItems()); // Logs: ['Apple', 'Banana']
+myCollection.removeItem('Apple');
+console.log(myCollection.listItems()); // Logs: ['Banana']
+
+// Activity 5: Memoization
+
+// Task 7: Write a function that memoizes the results of another function. Use a closure to store the results of previous computations.
+function memoize(fn) {
+  let cache = {};
+  return function(...args) {
+      let key = JSON.stringify(args);
+      if (cache[key]) {
+          return cache[key];
+      } else {
+          let result = fn(...args);
+          cache[key] = result;
+          return result;
+      }
+  }
+}
+
+const add = (a, b) => a + b;
+const memoizedAdd = memoize(add);
+console.log(memoizedAdd(1, 2)); // Logs: 3
+console.log(memoizedAdd(1, 2)); // Logs: 3 (from cache)
+
+// Task 8: Create a memoized version of a function that calculates the factorial of a number.
+const factorial = memoize(function(n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
 });
 
-randomPromise
-.then((message) => {
-  console.log(message);
-})
-.catch((error) => {
-  console.error('Error:', error.message);
-});
-// Task 6: Create a promise that randomly resolves or rejects. Use .catch() to handle the rejection and log an appropriate message to the console. Task 7: Use try-catch within an async function to handle errors from a promise that randomly resolves or rejects, and log the error message.
-
-  async function handleRandomPromise() {
-    const randomPromise = new Promise((resolve, reject) => {
-        const randomNumber = Math.random();
-        if (randomNumber > 0.5) {
-            resolve('Promise resolved');
-        } else {
-            reject(new Error('Promise rejected'));
-        }
-    });
-  
-    try {
-        const result = await randomPromise;
-        console.log(result);
-    } catch (error) {
-        console.error('Caught an error:', error.message);
-    }
-  }
-  
-  handleRandomPromise();
-// Activity 5: Graceful Error Handling in Fetch
-
-// • Task 8: Use the fetch API to request data from an invalid URL and handle the error using .catch(). Log an appropriate error message to the console.
-fetch('https://invalidurl.example')
-    .then((response) => response.json())
-    .catch((error) => {
-        console.error('Fetch error:', error.message);
-    });
-
-// Task 9: Use the fetch API to request data from an invalid URL within an async function and handle the error using try-catch. Log an appropriate error message.
-async function fetchInvalidURL() {
-  try {
-      const response = await fetch('https://invalidurl.example');
-      const data = await response.json();
-      console.log(data);
-  } catch (error) {
-      console.error('Fetch error:', error.message);
-  }
-}
-
-fetchInvalidURL();
+console.log(factorial(5)); // Logs: 120
+console.log(factorial(5)); // Logs: 120 (from cache)
