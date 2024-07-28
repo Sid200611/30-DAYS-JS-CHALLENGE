@@ -1211,130 +1211,177 @@
 // Activity 1: Understanding Closures
 
 // Task 1: Write a function that returns another function, where the inner function accesses a variable from the outer function's scope. Call the inner function and log the result.
-function outerFunction() {
-  let outerVariable = "I'm from outer scope";
-  return function innerFunction() {
-      console.log(outerVariable);
+// f
+
+
+// Day 16: Recursion
+
+// Tasks/Activities:
+
+// Activity 1: Basic Recursion
+
+// Task 1: Write a recursive function to calculate the factorial of a number. Log the result for a few test cases.
+function factorial(n) {
+  if (n === 0) {
+      return 1;
   }
-}
-
-const myFunction = outerFunction();
-myFunction(); // Logs: "I'm from outer scope"
-
-// • Task 2: Create a closure that maintains a private counter. Implement functions to increment and get the current value of the counter.
-function createCounter() {
-  let count = 0;
-  return {
-      increment: function() {
-          count++;
-      },
-      getCount: function() {
-          return count;
-      }
-  }
-}
-
-const counter = createCounter();
-counter.increment();
-console.log(counter.getCount()); // Logs: 1
-
-
-// Activity 2: Practical Closures
-
-// Task 3: Write a function that generates unique IDs. Use a closure to keep track of the last generated ID and increment it with each call. 
-function idGenerator() {
-  let lastId = 0;
-  return function() {
-      lastId++;
-      return lastId;
-  }
-}
-
-const generateId = idGenerator();
-console.log(generateId()); // Logs: 1
-console.log(generateId()); // Logs: 2
-
-// Task 4: Create a closure that captures a user's name and returns a function that greets the user by name.
-function greetUser(name) {
-  return function() {
-      console.log(`Hello, ${name}!`);
-  }
-}
-
-const greetJohn = greetUser('John');
-greetJohn(); // Logs: "Hello, John!"
-
-// Activity 3: Closures in Loops
-
-// Task 5: Write a loop that creates an array of functions. Each function should log its index when called. Use a closure to ensure each function logs the correct index.
-function createFunctions() {
-  let functions = [];
-  for (let i = 0; i < 5; i++) {
-      functions.push((function(index) {
-          return function() {
-              console.log(index);
-          }
-      })(i));
-  }
-  return functions;
-}
-
-const funcs = createFunctions();
-funcs[0](); // Logs: 0
-funcs[1](); // Logs: 1
-
-// Activity 4: Module Pattern
-
-// Task 6: Use closures to create a simple module for managing a collection of items. Implement methods to add, remove, and list items.
-function createCollection() {
-  let items = [];
-  return {
-      addItem: function(item) {
-          items.push(item);
-      },
-      removeItem: function(item) {
-          items = items.filter(i => i !== item);
-      },
-      listItems: function() {
-          return items;
-      }
-  }
-}
-
-const myCollection = createCollection();
-myCollection.addItem('Apple');
-myCollection.addItem('Banana');
-console.log(myCollection.listItems()); // Logs: ['Apple', 'Banana']
-myCollection.removeItem('Apple');
-console.log(myCollection.listItems()); // Logs: ['Banana']
-
-// Activity 5: Memoization
-
-// Task 7: Write a function that memoizes the results of another function. Use a closure to store the results of previous computations.
-function memoize(fn) {
-  let cache = {};
-  return function(...args) {
-      let key = JSON.stringify(args);
-      if (cache[key]) {
-          return cache[key];
-      } else {
-          let result = fn(...args);
-          cache[key] = result;
-          return result;
-      }
-  }
-}
-
-const add = (a, b) => a + b;
-const memoizedAdd = memoize(add);
-console.log(memoizedAdd(1, 2)); // Logs: 3
-console.log(memoizedAdd(1, 2)); // Logs: 3 (from cache)
-
-// Task 8: Create a memoized version of a function that calculates the factorial of a number.
-const factorial = memoize(function(n) {
-  if (n <= 1) return 1;
   return n * factorial(n - 1);
-});
+}
 
-console.log(factorial(5)); // Logs: 120
-console.log(factorial(5)); // Logs: 120 (from cache)
+// Test cases
+console.log(factorial(5));  // Output: 120
+console.log(factorial(0));  // Output: 1
+console.log(factorial(7));  // Output: 5040
+
+// Task 2: Write a recursive function to calculate the nth Fibonacci number. Log the result for a few test cases.
+function fibonacci(n) {
+  if (n <= 1) {
+      return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Test cases
+console.log(fibonacci(5));  // Output: 5
+console.log(fibonacci(10)); // Output: 55
+console.log(fibonacci(0));  // Output: 0
+
+// Activity 2: Recursion with Arrays
+
+// • Task 3: Write a recursive function to find the sum of all elements in an array. Log the result for a few test cases.
+function sumArray(arr) {
+  if (arr.length === 0) {
+      return 0;
+  }
+  return arr[0] + sumArray(arr.slice(1));
+}
+
+// Test cases
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+console.log(sumArray([10, 20, 30]));    // Output: 60
+console.log(sumArray([]));              // Output: 0
+
+// Task 4: Write a recursive function to find the maximum element in an array. Log the result for a few test cases.
+function maxArray(arr) {
+  if (arr.length === 1) {
+      return arr[0];
+  }
+  return Math.max(arr[0], maxArray(arr.slice(1)));
+}
+
+// Test cases
+console.log(maxArray([1, 2, 3, 4, 5])); // Output: 5
+console.log(maxArray([10, 20, 5, 7]));  // Output: 20
+console.log(maxArray([-10, -20, -5]));  // Output: -5
+
+// Activity 3: String Manipulation with Recursion
+
+// Task 5: Write a recursive function to reverse a string. Log the result for a few test cases.
+function reverseString(str) {
+  if (str === "") {
+      return "";
+  }
+  return reverseString(str.slice(1)) + str[0];
+}
+
+// Test cases
+console.log(reverseString("hello"));  // Output: "olleh"
+console.log(reverseString("world"));  // Output: "dlrow"
+console.log(reverseString(""));       // Output: ""
+
+// Task 6: Write a recursive function to check if a string is a palindrome. Log the result for a few test cases.
+function isPalindrome(str) {
+  if (str.length <= 1) {
+      return true;
+  }
+  if (str[0] !== str[str.length - 1]) {
+      return false;
+  }
+  return isPalindrome(str.slice(1, -1));
+}
+
+// Test cases
+console.log(isPalindrome("racecar")); // Output: true
+console.log(isPalindrome("hello"));   // Output: false
+console.log(isPalindrome("madam"));   // Output: true
+
+// Activity 4: Recursive Search
+
+// Task 7: Write a recursive function to perform a binary search on a sorted array. Log the index of the target element for a few test cases.
+function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+  if (left > right) {
+      return -1;
+  }
+  const mid = Math.floor((left + right) / 2);
+  if (arr[mid] === target) {
+      return mid;
+  }
+  if (arr[mid] > target) {
+      return binarySearch(arr, target, left, mid - 1);
+  }
+  return binarySearch(arr, target, mid + 1, right);
+}
+
+// Test cases
+console.log(binarySearch([1, 2, 3, 4, 5], 3));  // Output: 2
+console.log(binarySearch([1, 2, 3, 4, 5], 6));  // Output: -1
+console.log(binarySearch([10, 20, 30, 40, 50], 40)); // Output: 3
+
+// Task 8: Write a recursive function to count the occurrences of a target element in an array. Log the result for a few test cases.
+function countOccurrences(arr, target) {
+  if (arr.length === 0) {
+      return 0;
+  }
+  return (arr[0] === target ? 1 : 0) + countOccurrences(arr.slice(1), target);
+}
+
+// Test cases
+console.log(countOccurrences([1, 2, 3, 2, 2, 4, 5], 2)); // Output: 3
+console.log(countOccurrences([1, 1, 1, 1, 1], 1));       // Output: 5
+console.log(countOccurrences([1, 2, 3, 4, 5], 6));       // Output: 0
+
+// Activity 5: Tree Traversal (Optional)
+
+// Task 9: Write a recursive function to perform an in-order traversal of a binary tree. Log the nodes as they are visited.
+class TreeNode {
+  constructor(value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+  }
+}
+
+function inOrderTraversal(node) {
+  if (node === null) {
+      return;
+  }
+  inOrderTraversal(node.left);
+  console.log(node.value);
+  inOrderTraversal(node.right);
+}
+
+// Test case
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+inOrderTraversal(root); // Output: 4, 2, 5, 1, 3
+
+// Task 10: Write a recursive function to calculate the depth of a binary tree. Log the result for a few test cases.
+function treeDepth(node) {
+  if (node === null) {
+      return 0;
+  }
+  return 1 + Math.max(treeDepth(node.left), treeDepth(node.right));
+}
+
+// Test cases
+let root = new TreeNode(1);
+root.left = new TreeNode(2);
+root.right = new TreeNode(3);
+root.left.left = new TreeNode(4);
+root.left.right = new TreeNode(5);
+
+console.log(treeDepth(root)); // Output: 3
