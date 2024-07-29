@@ -1221,128 +1221,319 @@
 // Activity 1: Basic Recursion
 
 // Task 1: Write a recursive function to calculate the factorial of a number. Log the result for a few test cases.
-function factorial(n) {
-  if (n === 0) {
-      return 1;
+// function factorial(n) {
+//   if (n === 0) {
+//       return 1;
+//   }
+//   return n * factorial(n - 1);
+// }
+
+// // Test cases
+// console.log(factorial(5));  // Output: 120
+// console.log(factorial(0));  // Output: 1
+// console.log(factorial(7));  // Output: 5040
+
+// // Task 2: Write a recursive function to calculate the nth Fibonacci number. Log the result for a few test cases.
+// function fibonacci(n) {
+//   if (n <= 1) {
+//       return n;
+//   }
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+// // Test cases
+// console.log(fibonacci(5));  // Output: 5
+// console.log(fibonacci(10)); // Output: 55
+// console.log(fibonacci(0));  // Output: 0
+
+// // Activity 2: Recursion with Arrays
+
+// // • Task 3: Write a recursive function to find the sum of all elements in an array. Log the result for a few test cases.
+// function sumArray(arr) {
+//   if (arr.length === 0) {
+//       return 0;
+//   }
+//   return arr[0] + sumArray(arr.slice(1));
+// }
+
+// // Test cases
+// console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+// console.log(sumArray([10, 20, 30]));    // Output: 60
+// console.log(sumArray([]));              // Output: 0
+
+// // Task 4: Write a recursive function to find the maximum element in an array. Log the result for a few test cases.
+// function maxArray(arr) {
+//   if (arr.length === 1) {
+//       return arr[0];
+//   }
+//   return Math.max(arr[0], maxArray(arr.slice(1)));
+// }
+
+// // Test cases
+// console.log(maxArray([1, 2, 3, 4, 5])); // Output: 5
+// console.log(maxArray([10, 20, 5, 7]));  // Output: 20
+// console.log(maxArray([-10, -20, -5]));  // Output: -5
+
+// // Activity 3: String Manipulation with Recursion
+
+// // Task 5: Write a recursive function to reverse a string. Log the result for a few test cases.
+// function reverseString(str) {
+//   if (str === "") {
+//       return "";
+//   }
+//   return reverseString(str.slice(1)) + str[0];
+// }
+
+// // Test cases
+// console.log(reverseString("hello"));  // Output: "olleh"
+// console.log(reverseString("world"));  // Output: "dlrow"
+// console.log(reverseString(""));       // Output: ""
+
+// // Task 6: Write a recursive function to check if a string is a palindrome. Log the result for a few test cases.
+// function isPalindrome(str) {
+//   if (str.length <= 1) {
+//       return true;
+//   }
+//   if (str[0] !== str[str.length - 1]) {
+//       return false;
+//   }
+//   return isPalindrome(str.slice(1, -1));
+// }
+
+// // Test cases
+// console.log(isPalindrome("racecar")); // Output: true
+// console.log(isPalindrome("hello"));   // Output: false
+// console.log(isPalindrome("madam"));   // Output: true
+
+// // Activity 4: Recursive Search
+
+// // Task 7: Write a recursive function to perform a binary search on a sorted array. Log the index of the target element for a few test cases.
+// function binarySearch(arr, target, left = 0, right = arr.length - 1) {
+//   if (left > right) {
+//       return -1;
+//   }
+//   const mid = Math.floor((left + right) / 2);
+//   if (arr[mid] === target) {
+//       return mid;
+//   }
+//   if (arr[mid] > target) {
+//       return binarySearch(arr, target, left, mid - 1);
+//   }
+//   return binarySearch(arr, target, mid + 1, right);
+// }
+
+// // Test cases
+// console.log(binarySearch([1, 2, 3, 4, 5], 3));  // Output: 2
+// console.log(binarySearch([1, 2, 3, 4, 5], 6));  // Output: -1
+// console.log(binarySearch([10, 20, 30, 40, 50], 40)); // Output: 3
+
+// // Task 8: Write a recursive function to count the occurrences of a target element in an array. Log the result for a few test cases.
+// function countOccurrences(arr, target) {
+//   if (arr.length === 0) {
+//       return 0;
+//   }
+//   return (arr[0] === target ? 1 : 0) + countOccurrences(arr.slice(1), target);
+// }
+
+// // Test cases
+// console.log(countOccurrences([1, 2, 3, 2, 2, 4, 5], 2)); // Output: 3
+// console.log(countOccurrences([1, 1, 1, 1, 1], 1));       // Output: 5
+// console.log(countOccurrences([1, 2, 3, 4, 5], 6));       // Output: 0
+
+// // Activity 5: Tree Traversal (Optional)
+
+// // Task 9: Write a recursive function to perform an in-order traversal of a binary tree. Log the nodes as they are visited.
+// class TreeNode {
+//   constructor(value) {
+//       this.value = value;
+//       this.left = null;
+//       this.right = null;
+//   }
+// }
+
+// function inOrderTraversal(node) {
+//   if (node === null) {
+//       return;
+//   }
+//   inOrderTraversal(node.left);
+//   console.log(node.value);
+//   inOrderTraversal(node.right);
+// }
+
+// // Test case
+// let root = new TreeNode(1);
+// root.left = new TreeNode(2);
+// root.right = new TreeNode(3);
+// root.left.left = new TreeNode(4);
+// root.left.right = new TreeNode(5);
+
+// inOrderTraversal(root); // Output: 4, 2, 5, 1, 3
+
+// // Task 10: Write a recursive function to calculate the depth of a binary tree. Log the result for a few test cases.
+// function treeDepth(node) {
+//   if (node === null) {
+//       return 0;
+//   }
+//   return 1 + Math.max(treeDepth(node.left), treeDepth(node.right));
+// }
+
+// // Test cases
+// let root = new TreeNode(1);
+// root.left = new TreeNode(2);
+// root.right = new TreeNode(3);
+// root.left.left = new TreeNode(4);
+// root.left.right = new TreeNode(5);
+
+// console.log(treeDepth(root)); // Output: 3
+
+
+
+// Day 17: Data Structures
+
+// Tasks/Activities:
+
+// Activity 1: Linked List
+
+// Task 1: Implement a Node class to represent an element in a linked list with properties value and next.
+class Node {
+  constructor(value) {
+      this.value = value;
+      this.next = null;
   }
-  return n * factorial(n - 1);
 }
 
-// Test cases
-console.log(factorial(5));  // Output: 120
-console.log(factorial(0));  // Output: 1
-console.log(factorial(7));  // Output: 5040
-
-// Task 2: Write a recursive function to calculate the nth Fibonacci number. Log the result for a few test cases.
-function fibonacci(n) {
-  if (n <= 1) {
-      return n;
+// • Task 2: Implement a LinkedList class with methods to add a node to the end, remove a node from the end, and display all nodes.
+class LinkedList {
+  constructor() {
+      this.head = null;
   }
-  return fibonacci(n - 1) + fibonacci(n - 2);
+
+  add(value) {
+      const newNode = new Node(value);
+      if (!this.head) {
+          this.head = newNode;
+      } else {
+          let current = this.head;
+          while (current.next) {
+              current = current.next;
+          }
+          current.next = newNode;
+      }
+  }
+
+  remove() {
+      if (!this.head) return null;
+
+      if (!this.head.next) {
+          const removedValue = this.head.value;
+          this.head = null;
+          return removedValue;
+      }
+
+      let current = this.head;
+      while (current.next.next) {
+          current = current.next;
+      }
+      const removedValue = current.next.value;
+      current.next = null;
+      return removedValue;
+  }
+
+  display() {
+      if (!this.head) return [];
+
+      const values = [];
+      let current = this.head;
+      while (current) {
+          values.push(current.value);
+          current = current.next;
+      }
+      return values;
+  }
 }
 
-// Test cases
-console.log(fibonacci(5));  // Output: 5
-console.log(fibonacci(10)); // Output: 55
-console.log(fibonacci(0));  // Output: 0
+// Activity 2: Stack
 
-// Activity 2: Recursion with Arrays
-
-// • Task 3: Write a recursive function to find the sum of all elements in an array. Log the result for a few test cases.
-function sumArray(arr) {
-  if (arr.length === 0) {
-      return 0;
+// Task 3: Implement a Stack class with methods push (add element), pop (remove element), and peek (view the top element).
+class Stack {
+  constructor() {
+      this.items = [];
   }
-  return arr[0] + sumArray(arr.slice(1));
+
+  push(element) {
+      this.items.push(element);
+  }
+
+  pop() {
+      if (this.items.length === 0) return null;
+      return this.items.pop();
+  }
+
+  peek() {
+      if (this.items.length === 0) return null;
+      return this.items[this.items.length - 1];
+  }
 }
 
-// Test cases
-console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
-console.log(sumArray([10, 20, 30]));    // Output: 60
-console.log(sumArray([]));              // Output: 0
-
-// Task 4: Write a recursive function to find the maximum element in an array. Log the result for a few test cases.
-function maxArray(arr) {
-  if (arr.length === 1) {
-      return arr[0];
-  }
-  return Math.max(arr[0], maxArray(arr.slice(1)));
-}
-
-// Test cases
-console.log(maxArray([1, 2, 3, 4, 5])); // Output: 5
-console.log(maxArray([10, 20, 5, 7]));  // Output: 20
-console.log(maxArray([-10, -20, -5]));  // Output: -5
-
-// Activity 3: String Manipulation with Recursion
-
-// Task 5: Write a recursive function to reverse a string. Log the result for a few test cases.
+// • Task 4: Use the Stack class to reverse a string by pushing all characters onto the stack and then popping them off.
 function reverseString(str) {
-  if (str === "") {
-      return "";
+  const stack = new Stack();
+  for (let char of str) {
+      stack.push(char);
   }
-  return reverseString(str.slice(1)) + str[0];
+  let reversedStr = '';
+  while (stack.peek() !== null) {
+      reversedStr += stack.pop();
+  }
+  return reversedStr;
 }
 
-// Test cases
-console.log(reverseString("hello"));  // Output: "olleh"
-console.log(reverseString("world"));  // Output: "dlrow"
-console.log(reverseString(""));       // Output: ""
+// Activity 3: Queue
 
-// Task 6: Write a recursive function to check if a string is a palindrome. Log the result for a few test cases.
-function isPalindrome(str) {
-  if (str.length <= 1) {
-      return true;
+// Task 5: Implement a Queue class with methods enqueue (add element), dequeue (remove element), and front (view the first element).
+class Queue {
+  constructor() {
+      this.items = [];
   }
-  if (str[0] !== str[str.length - 1]) {
-      return false;
+
+  enqueue(element) {
+      this.items.push(element);
   }
-  return isPalindrome(str.slice(1, -1));
+
+  dequeue() {
+      if (this.items.length === 0) return null;
+      return this.items.shift();
+  }
+
+  front() {
+      if (this.items.length === 0) return null;
+      return this.items[0];
+  }
 }
 
-// Test cases
-console.log(isPalindrome("racecar")); // Output: true
-console.log(isPalindrome("hello"));   // Output: false
-console.log(isPalindrome("madam"));   // Output: true
+// • Task 6: Use the Queue class to simulate a simple printer queue where print jobs are added to the queue and processed in order.
+class PrinterQueue {
+  constructor() {
+      this.queue = new Queue();
+  }
 
-// Activity 4: Recursive Search
+  addPrintJob(job) {
+      this.queue.enqueue(job);
+  }
 
-// Task 7: Write a recursive function to perform a binary search on a sorted array. Log the index of the target element for a few test cases.
-function binarySearch(arr, target, left = 0, right = arr.length - 1) {
-  if (left > right) {
-      return -1;
+  processPrintJob() {
+      if (this.queue.front() === null) {
+          console.log('No print jobs in the queue.');
+      } else {
+          const job = this.queue.dequeue();
+          console.log(`Processing print job: ${job}`);
+      }
   }
-  const mid = Math.floor((left + right) / 2);
-  if (arr[mid] === target) {
-      return mid;
-  }
-  if (arr[mid] > target) {
-      return binarySearch(arr, target, left, mid - 1);
-  }
-  return binarySearch(arr, target, mid + 1, right);
 }
 
-// Test cases
-console.log(binarySearch([1, 2, 3, 4, 5], 3));  // Output: 2
-console.log(binarySearch([1, 2, 3, 4, 5], 6));  // Output: -1
-console.log(binarySearch([10, 20, 30, 40, 50], 40)); // Output: 3
+// Activity 4: Binary Tree
 
-// Task 8: Write a recursive function to count the occurrences of a target element in an array. Log the result for a few test cases.
-function countOccurrences(arr, target) {
-  if (arr.length === 0) {
-      return 0;
-  }
-  return (arr[0] === target ? 1 : 0) + countOccurrences(arr.slice(1), target);
-}
-
-// Test cases
-console.log(countOccurrences([1, 2, 3, 2, 2, 4, 5], 2)); // Output: 3
-console.log(countOccurrences([1, 1, 1, 1, 1], 1));       // Output: 5
-console.log(countOccurrences([1, 2, 3, 4, 5], 6));       // Output: 0
-
-// Activity 5: Tree Traversal (Optional)
-
-// Task 9: Write a recursive function to perform an in-order traversal of a binary tree. Log the nodes as they are visited.
+// Task 7: Implement a TreeNode class to represent a node in a binary tree with properties value, left, and right.
 class TreeNode {
   constructor(value) {
       this.value = value;
@@ -1351,37 +1542,100 @@ class TreeNode {
   }
 }
 
-function inOrderTraversal(node) {
-  if (node === null) {
-      return;
+// Task 8: Implement a BinaryTree class with methods for inserting values and performing in-order traversal to display nodes.
+class BinaryTree {
+  constructor() {
+      this.root = null;
   }
-  inOrderTraversal(node.left);
-  console.log(node.value);
-  inOrderTraversal(node.right);
+
+  insert(value) {
+      const newNode = new TreeNode(value);
+      if (!this.root) {
+          this.root = newNode;
+          return;
+      }
+
+      let current = this.root;
+      while (true) {
+          if (value < current.value) {
+              if (!current.left) {
+                  current.left = newNode;
+                  break;
+              }
+              current = current.left;
+          } else {
+              if (!current.right) {
+                  current.right = newNode;
+                  break;
+              }
+              current = current.right;
+          }
+      }
+  }
+
+  inOrderTraversal(node = this.root, result = []) {
+      if (node) {
+          this.inOrderTraversal(node.left, result);
+          result.push(node.value);
+          this.inOrderTraversal(node.right, result);
+      }
+      return result;
+  }
 }
 
-// Test case
-let root = new TreeNode(1);
-root.left = new TreeNode(2);
-root.right = new TreeNode(3);
-root.left.left = new TreeNode(4);
-root.left.right = new TreeNode(5);
+// Activity 5: Graph (Optional)
 
-inOrderTraversal(root); // Output: 4, 2, 5, 1, 3
-
-// Task 10: Write a recursive function to calculate the depth of a binary tree. Log the result for a few test cases.
-function treeDepth(node) {
-  if (node === null) {
-      return 0;
+// Task 9: Implement a Graph class with methods to add vertices, add edges, and perform a breadth-first search (BFS).
+class Graph {
+  constructor() {
+      this.vertices = {};
   }
-  return 1 + Math.max(treeDepth(node.left), treeDepth(node.right));
+
+  addVertex(vertex) {
+      if (!this.vertices[vertex]) {
+          this.vertices[vertex] = [];
+      }
+  }
+
+  addEdge(vertex1, vertex2) {
+      if (this.vertices[vertex1] && this.vertices[vertex2]) {
+          this.vertices[vertex1].push(vertex2);
+          this.vertices[vertex2].push(vertex1);
+      }
+  }
+
+  bfs(start) {
+      if (!this.vertices[start]) return null;
+
+      const queue = [start];
+      const visited = { [start]: true };
+      const result = [];
+
+      while (queue.length) {
+          const vertex = queue.shift();
+          result.push(vertex);
+
+          this.vertices[vertex].forEach(neighbor => {
+              if (!visited[neighbor]) {
+                  visited[neighbor] = true;
+                  queue.push(neighbor);
+              }
+          });
+      }
+      return result;
+  }
 }
 
-// Test cases
-let root = new TreeNode(1);
-root.left = new TreeNode(2);
-root.right = new TreeNode(3);
-root.left.left = new TreeNode(4);
-root.left.right = new TreeNode(5);
+// Task 10: Use the Graph class to represent a simple network and perform BFS to find the shortest path between two nodes.
+const graph = new Graph();
+graph.addVertex('A');
+graph.addVertex('B');
+graph.addVertex('C');
+graph.addVertex('D');
+graph.addEdge('A', 'B');
+graph.addEdge('A', 'C');
+graph.addEdge('B', 'D');
+graph.addEdge('C', 'D');
 
-console.log(treeDepth(root)); // Output: 3
+const shortestPath = graph.bfs('A');
+console.log(shortestPath); // Output: ['A', 'B', 'C', 'D']
