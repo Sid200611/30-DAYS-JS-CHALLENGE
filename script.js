@@ -1395,247 +1395,198 @@
 // Activity 1: Linked List
 
 // Task 1: Implement a Node class to represent an element in a linked list with properties value and next.
-class Node {
-  constructor(value) {
-      this.value = value;
-      this.next = null;
-  }
-}
+// 
 
-// • Task 2: Implement a LinkedList class with methods to add a node to the end, remove a node from the end, and display all nodes.
-class LinkedList {
-  constructor() {
-      this.head = null;
-  }
 
-  add(value) {
-      const newNode = new Node(value);
-      if (!this.head) {
-          this.head = newNode;
+// Day 18: Algorithms
+
+// Tasks/Activities:
+
+// Activity 1: Sorting Algorithms
+
+// Task 1: Implement the bubble sort algorithm to sort an array of numbers in ascending order. Log the sorted array. 
+function bubbleSort(arr) {
+    let n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - 1 - i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // Swap
+        }
+      }
+    }
+    return arr;
+  }
+  
+  let array1 = [5, 3, 8, 4, 2];
+  console.log(bubbleSort(array1)); // Output: [2, 3, 4, 5, 8]
+  
+// Task 2: Implement the selection sort algorithm
+// to sort an array of numbers in ascending order. Log the sorted array. 
+function selectionSort(arr) {
+    let n = arr.length;
+    for (let i = 0; i < n - 1; i++) {
+      let minIndex = i;
+      for (let j = i + 1; j < n; j++) {
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j;
+        }
+      }
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]; // Swap
+    }
+    return arr;
+  }
+  
+  let array2 = [5, 3, 8, 4, 2];
+  console.log(selectionSort(array2)); // Output: [2, 3, 4, 5, 8]
+  
+// Task 3: Implement the quicksort algorithm to sort an array of numbers in ascending order. Log the sorted array.
+function quicksort(arr) {
+    if (arr.length <= 1) return arr;
+    let pivot = arr[arr.length - 1];
+    let left = [];
+    let right = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] < pivot) left.push(arr[i]);
+      else right.push(arr[i]);
+    }
+    return [...quicksort(left), pivot, ...quicksort(right)];
+  }
+  
+  let array3 = [5, 3, 8, 4, 2];
+  console.log(quicksort(array3)); // Output: [2, 3, 4, 5, 8]
+  
+// Activity 2: Searching Algorithms
+
+
+// Task 4: Implement the linear search algorithm to find a target value in an array. Log the index of the target value. • 
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === target) return i;
+    }
+    return -1; // Target not found
+  }
+  
+  let array4 = [5, 3, 8, 4, 2];
+  console.log(linearSearch(array4, 4)); // Output: 3
+  console.log(linearSearch(array4, 7)); // Output: -1
+  
+// Task 5: Implement the binary search algorithm to find a target value in a sorted array. Log the index of the target value.
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+      let mid = Math.floor((left + right) / 2);
+      if (arr[mid] === target) return mid;
+      if (arr[mid] < target) left = mid + 1;
+      else right = mid - 1;
+    }
+    return -1; // Target not found
+  }
+  
+  let sortedArray = [2, 3, 4, 5, 8];
+  console.log(binarySearch(sortedArray, 4)); // Output: 2
+  console.log(binarySearch(sortedArray, 7)); // Output: -1
+  
+// Activity 3: String Algorithms
+
+// Task 6: Write a function to count the occurrences of each character in a string. Log the character counts.
+function countCharacters(str) {
+    let charCount = {};
+    for (let char of str) {
+      charCount[char] = (charCount[char] || 0) + 1;
+    }
+    return charCount;
+  }
+  
+  console.log(countCharacters("hello")); // Output: { h: 1, e: 1, l: 2, o: 1 }
+  
+// Task 7: Write a function to find the longest substring without repeating characters in a string. Log the length of the substring.
+function longestSubstringWithoutRepeating(s) {
+    let maxLen = 0;
+    let start = 0;
+    let seenChars = {};
+  
+    for (let end = 0; end < s.length; end++) {
+      let char = s[end];
+      if (seenChars[char] !== undefined && seenChars[char] >= start) {
+        start = seenChars[char] + 1;
+      }
+      seenChars[char] = end;
+      maxLen = Math.max(maxLen, end - start + 1);
+    }
+  
+    return maxLen;
+  }
+  
+  console.log(longestSubstringWithoutRepeating("abcabcbb")); // Output: 3 ("abc")
+  console.log(longestSubstringWithoutRepeating("bbbbb"));    // Output: 1 ("b")
+  
+// Activity 4: Array Algorithms
+
+// Task 8: Write a function to rotate an array by k positions. Log the rotated array.
+function rotateArray(arr, k) {
+    k = k % arr.length;
+    return [...arr.slice(-k), ...arr.slice(0, -k)];
+  }
+  
+  let arrayToRotate = [1, 2, 3, 4, 5];
+  console.log(rotateArray(arrayToRotate, 2)); // Output: [4, 5, 1, 2, 3]
+  
+// Task 9: Write a function to merge two sorted arrays into one sorted array. Log the merged array.
+function mergeSortedArrays(arr1, arr2) {
+    let mergedArray = [];
+    let i = 0, j = 0;
+    while (i < arr1.length && j < arr2.length) {
+      if (arr1[i] < arr2[j]) {
+        mergedArray.push(arr1[i]);
+        i++;
       } else {
-          let current = this.head;
-          while (current.next) {
-              current = current.next;
-          }
-          current.next = newNode;
+        mergedArray.push(arr2[j]);
+        j++;
       }
+    }
+    while (i < arr1.length) mergedArray.push(arr1[i++]);
+    while (j < arr2.length) mergedArray.push(arr2[j++]);
+    return mergedArray;
   }
+  
+  let arr1 = [1, 3, 5];
+  let arr2 = [2, 4, 6];
+  console.log(mergeSortedArrays(arr1, arr2)); // Output: [1, 2, 3, 4, 5, 6]
+  
+// Activity 5: Dynamic Programming (Optional)
 
-  remove() {
-      if (!this.head) return null;
-
-      if (!this.head.next) {
-          const removedValue = this.head.value;
-          this.head = null;
-          return removedValue;
+// Task 10: Write a function to solve the Fibonacci sequence using dynamic programming. Log the Fibonacci numbers. 
+function fibonacci(n) {
+    let fib = [0, 1];
+    for (let i = 2; i <= n; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib.slice(1); // Skipping the first element (0)
+  }
+  
+  console.log(fibonacci(10)); // Output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+  
+// Task 11: Write a function to solve the knapsack problem using dynamic programming. Log the maximum value that can be obtained.
+function knapsack(values, weights, capacity) {
+    let n = values.length;
+    let dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
+  
+    for (let i = 1; i <= n; i++) {
+      for (let w = 0; w <= capacity; w++) {
+        if (weights[i - 1] <= w) {
+          dp[i][w] = Math.max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+        } else {
+          dp[i][w] = dp[i - 1][w];
+        }
       }
-
-      let current = this.head;
-      while (current.next.next) {
-          current = current.next;
-      }
-      const removedValue = current.next.value;
-      current.next = null;
-      return removedValue;
+    }
+  
+    return dp[n][capacity];
   }
-
-  display() {
-      if (!this.head) return [];
-
-      const values = [];
-      let current = this.head;
-      while (current) {
-          values.push(current.value);
-          current = current.next;
-      }
-      return values;
-  }
-}
-
-// Activity 2: Stack
-
-// Task 3: Implement a Stack class with methods push (add element), pop (remove element), and peek (view the top element).
-class Stack {
-  constructor() {
-      this.items = [];
-  }
-
-  push(element) {
-      this.items.push(element);
-  }
-
-  pop() {
-      if (this.items.length === 0) return null;
-      return this.items.pop();
-  }
-
-  peek() {
-      if (this.items.length === 0) return null;
-      return this.items[this.items.length - 1];
-  }
-}
-
-// • Task 4: Use the Stack class to reverse a string by pushing all characters onto the stack and then popping them off.
-function reverseString(str) {
-  const stack = new Stack();
-  for (let char of str) {
-      stack.push(char);
-  }
-  let reversedStr = '';
-  while (stack.peek() !== null) {
-      reversedStr += stack.pop();
-  }
-  return reversedStr;
-}
-
-// Activity 3: Queue
-
-// Task 5: Implement a Queue class with methods enqueue (add element), dequeue (remove element), and front (view the first element).
-class Queue {
-  constructor() {
-      this.items = [];
-  }
-
-  enqueue(element) {
-      this.items.push(element);
-  }
-
-  dequeue() {
-      if (this.items.length === 0) return null;
-      return this.items.shift();
-  }
-
-  front() {
-      if (this.items.length === 0) return null;
-      return this.items[0];
-  }
-}
-
-// • Task 6: Use the Queue class to simulate a simple printer queue where print jobs are added to the queue and processed in order.
-class PrinterQueue {
-  constructor() {
-      this.queue = new Queue();
-  }
-
-  addPrintJob(job) {
-      this.queue.enqueue(job);
-  }
-
-  processPrintJob() {
-      if (this.queue.front() === null) {
-          console.log('No print jobs in the queue.');
-      } else {
-          const job = this.queue.dequeue();
-          console.log(`Processing print job: ${job}`);
-      }
-  }
-}
-
-// Activity 4: Binary Tree
-
-// Task 7: Implement a TreeNode class to represent a node in a binary tree with properties value, left, and right.
-class TreeNode {
-  constructor(value) {
-      this.value = value;
-      this.left = null;
-      this.right = null;
-  }
-}
-
-// Task 8: Implement a BinaryTree class with methods for inserting values and performing in-order traversal to display nodes.
-class BinaryTree {
-  constructor() {
-      this.root = null;
-  }
-
-  insert(value) {
-      const newNode = new TreeNode(value);
-      if (!this.root) {
-          this.root = newNode;
-          return;
-      }
-
-      let current = this.root;
-      while (true) {
-          if (value < current.value) {
-              if (!current.left) {
-                  current.left = newNode;
-                  break;
-              }
-              current = current.left;
-          } else {
-              if (!current.right) {
-                  current.right = newNode;
-                  break;
-              }
-              current = current.right;
-          }
-      }
-  }
-
-  inOrderTraversal(node = this.root, result = []) {
-      if (node) {
-          this.inOrderTraversal(node.left, result);
-          result.push(node.value);
-          this.inOrderTraversal(node.right, result);
-      }
-      return result;
-  }
-}
-
-// Activity 5: Graph (Optional)
-
-// Task 9: Implement a Graph class with methods to add vertices, add edges, and perform a breadth-first search (BFS).
-class Graph {
-  constructor() {
-      this.vertices = {};
-  }
-
-  addVertex(vertex) {
-      if (!this.vertices[vertex]) {
-          this.vertices[vertex] = [];
-      }
-  }
-
-  addEdge(vertex1, vertex2) {
-      if (this.vertices[vertex1] && this.vertices[vertex2]) {
-          this.vertices[vertex1].push(vertex2);
-          this.vertices[vertex2].push(vertex1);
-      }
-  }
-
-  bfs(start) {
-      if (!this.vertices[start]) return null;
-
-      const queue = [start];
-      const visited = { [start]: true };
-      const result = [];
-
-      while (queue.length) {
-          const vertex = queue.shift();
-          result.push(vertex);
-
-          this.vertices[vertex].forEach(neighbor => {
-              if (!visited[neighbor]) {
-                  visited[neighbor] = true;
-                  queue.push(neighbor);
-              }
-          });
-      }
-      return result;
-  }
-}
-
-// Task 10: Use the Graph class to represent a simple network and perform BFS to find the shortest path between two nodes.
-const graph = new Graph();
-graph.addVertex('A');
-graph.addVertex('B');
-graph.addVertex('C');
-graph.addVertex('D');
-graph.addEdge('A', 'B');
-graph.addEdge('A', 'C');
-graph.addEdge('B', 'D');
-graph.addEdge('C', 'D');
-
-const shortestPath = graph.bfs('A');
-console.log(shortestPath); // Output: ['A', 'B', 'C', 'D']
+  
+  let values = [60, 100, 120];
+  let weights = [10, 20, 30];
+  let capacity = 50;
+  console.log(knapsack(values, weights, capacity)); // Output: 220
+  
