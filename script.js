@@ -1405,188 +1405,263 @@
 // Activity 1: Sorting Algorithms
 
 // Task 1: Implement the bubble sort algorithm to sort an array of numbers in ascending order. Log the sorted array. 
-function bubbleSort(arr) {
-    let n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-      for (let j = 0; j < n - 1 - i; j++) {
-        if (arr[j] > arr[j + 1]) {
-          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // Swap
-        }
-      }
-    }
-    return arr;
-  }
+// function bubbleSort(arr) {
+//     let n = arr.length;
+//     for (let i = 0; i < n - 1; i++) {
+//       for (let j = 0; j < n - 1 - i; j++) {
+//         if (arr[j] > arr[j + 1]) {
+//           [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // Swap
+//         }
+//       }
+//     }
+//     return arr;
+//   }
   
-  let array1 = [5, 3, 8, 4, 2];
-  console.log(bubbleSort(array1)); // Output: [2, 3, 4, 5, 8]
+//   let array1 = [5, 3, 8, 4, 2];
+//   console.log(bubbleSort(array1)); // Output: [2, 3, 4, 5, 8]
   
-// Task 2: Implement the selection sort algorithm
-// to sort an array of numbers in ascending order. Log the sorted array. 
-function selectionSort(arr) {
-    let n = arr.length;
-    for (let i = 0; i < n - 1; i++) {
-      let minIndex = i;
-      for (let j = i + 1; j < n; j++) {
-        if (arr[j] < arr[minIndex]) {
-          minIndex = j;
-        }
-      }
-      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]; // Swap
-    }
-    return arr;
-  }
+// // Task 2: Implement the selection sort algorithm
+// // to sort an array of numbers in ascending order. Log the sorted array. 
+// function selectionSort(arr) {
+//     let n = arr.length;
+//     for (let i = 0; i < n - 1; i++) {
+//       let minIndex = i;
+//       for (let j = i + 1; j < n; j++) {
+//         if (arr[j] < arr[minIndex]) {
+//           minIndex = j;
+//         }
+//       }
+//       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]; // Swap
+//     }
+//     return arr;
+//   }
   
-  let array2 = [5, 3, 8, 4, 2];
-  console.log(selectionSort(array2)); // Output: [2, 3, 4, 5, 8]
+//   let array2 = [5, 3, 8, 4, 2];
+//   console.log(selectionSort(array2)); // Output: [2, 3, 4, 5, 8]
   
-// Task 3: Implement the quicksort algorithm to sort an array of numbers in ascending order. Log the sorted array.
-function quicksort(arr) {
-    if (arr.length <= 1) return arr;
-    let pivot = arr[arr.length - 1];
-    let left = [];
-    let right = [];
-    for (let i = 0; i < arr.length - 1; i++) {
-      if (arr[i] < pivot) left.push(arr[i]);
-      else right.push(arr[i]);
-    }
-    return [...quicksort(left), pivot, ...quicksort(right)];
-  }
+// // Task 3: Implement the quicksort algorithm to sort an array of numbers in ascending order. Log the sorted array.
+// function quicksort(arr) {
+//     if (arr.length <= 1) return arr;
+//     let pivot = arr[arr.length - 1];
+//     let left = [];
+//     let right = [];
+//     for (let i = 0; i < arr.length - 1; i++) {
+//       if (arr[i] < pivot) left.push(arr[i]);
+//       else right.push(arr[i]);
+//     }
+//     return [...quicksort(left), pivot, ...quicksort(right)];
+//   }
   
-  let array3 = [5, 3, 8, 4, 2];
-  console.log(quicksort(array3)); // Output: [2, 3, 4, 5, 8]
+//   let array3 = [5, 3, 8, 4, 2];
+//   console.log(quicksort(array3)); // Output: [2, 3, 4, 5, 8]
   
-// Activity 2: Searching Algorithms
+// // Activity 2: Searching Algorithms
 
 
-// Task 4: Implement the linear search algorithm to find a target value in an array. Log the index of the target value. • 
-function linearSearch(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === target) return i;
-    }
-    return -1; // Target not found
-  }
+// // Task 4: Implement the linear search algorithm to find a target value in an array. Log the index of the target value. • 
+// function linearSearch(arr, target) {
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i] === target) return i;
+//     }
+//     return -1; // Target not found
+//   }
   
-  let array4 = [5, 3, 8, 4, 2];
-  console.log(linearSearch(array4, 4)); // Output: 3
-  console.log(linearSearch(array4, 7)); // Output: -1
+//   let array4 = [5, 3, 8, 4, 2];
+//   console.log(linearSearch(array4, 4)); // Output: 3
+//   console.log(linearSearch(array4, 7)); // Output: -1
   
-// Task 5: Implement the binary search algorithm to find a target value in a sorted array. Log the index of the target value.
-function binarySearch(arr, target) {
-    let left = 0;
-    let right = arr.length - 1;
-    while (left <= right) {
-      let mid = Math.floor((left + right) / 2);
-      if (arr[mid] === target) return mid;
-      if (arr[mid] < target) left = mid + 1;
-      else right = mid - 1;
-    }
-    return -1; // Target not found
-  }
+// // Task 5: Implement the binary search algorithm to find a target value in a sorted array. Log the index of the target value.
+// function binarySearch(arr, target) {
+//     let left = 0;
+//     let right = arr.length - 1;
+//     while (left <= right) {
+//       let mid = Math.floor((left + right) / 2);
+//       if (arr[mid] === target) return mid;
+//       if (arr[mid] < target) left = mid + 1;
+//       else right = mid - 1;
+//     }
+//     return -1; // Target not found
+//   }
   
-  let sortedArray = [2, 3, 4, 5, 8];
-  console.log(binarySearch(sortedArray, 4)); // Output: 2
-  console.log(binarySearch(sortedArray, 7)); // Output: -1
+//   let sortedArray = [2, 3, 4, 5, 8];
+//   console.log(binarySearch(sortedArray, 4)); // Output: 2
+//   console.log(binarySearch(sortedArray, 7)); // Output: -1
   
-// Activity 3: String Algorithms
+// // Activity 3: String Algorithms
 
-// Task 6: Write a function to count the occurrences of each character in a string. Log the character counts.
-function countCharacters(str) {
-    let charCount = {};
-    for (let char of str) {
-      charCount[char] = (charCount[char] || 0) + 1;
-    }
-    return charCount;
-  }
+// // Task 6: Write a function to count the occurrences of each character in a string. Log the character counts.
+// function countCharacters(str) {
+//     let charCount = {};
+//     for (let char of str) {
+//       charCount[char] = (charCount[char] || 0) + 1;
+//     }
+//     return charCount;
+//   }
   
-  console.log(countCharacters("hello")); // Output: { h: 1, e: 1, l: 2, o: 1 }
+//   console.log(countCharacters("hello")); // Output: { h: 1, e: 1, l: 2, o: 1 }
   
-// Task 7: Write a function to find the longest substring without repeating characters in a string. Log the length of the substring.
-function longestSubstringWithoutRepeating(s) {
-    let maxLen = 0;
-    let start = 0;
-    let seenChars = {};
+// // Task 7: Write a function to find the longest substring without repeating characters in a string. Log the length of the substring.
+// function longestSubstringWithoutRepeating(s) {
+//     let maxLen = 0;
+//     let start = 0;
+//     let seenChars = {};
   
-    for (let end = 0; end < s.length; end++) {
-      let char = s[end];
-      if (seenChars[char] !== undefined && seenChars[char] >= start) {
-        start = seenChars[char] + 1;
-      }
-      seenChars[char] = end;
-      maxLen = Math.max(maxLen, end - start + 1);
-    }
+//     for (let end = 0; end < s.length; end++) {
+//       let char = s[end];
+//       if (seenChars[char] !== undefined && seenChars[char] >= start) {
+//         start = seenChars[char] + 1;
+//       }
+//       seenChars[char] = end;
+//       maxLen = Math.max(maxLen, end - start + 1);
+//     }
   
-    return maxLen;
-  }
+//     return maxLen;
+//   }
   
-  console.log(longestSubstringWithoutRepeating("abcabcbb")); // Output: 3 ("abc")
-  console.log(longestSubstringWithoutRepeating("bbbbb"));    // Output: 1 ("b")
+//   console.log(longestSubstringWithoutRepeating("abcabcbb")); // Output: 3 ("abc")
+//   console.log(longestSubstringWithoutRepeating("bbbbb"));    // Output: 1 ("b")
   
-// Activity 4: Array Algorithms
+// // Activity 4: Array Algorithms
 
-// Task 8: Write a function to rotate an array by k positions. Log the rotated array.
-function rotateArray(arr, k) {
-    k = k % arr.length;
-    return [...arr.slice(-k), ...arr.slice(0, -k)];
-  }
+// // Task 8: Write a function to rotate an array by k positions. Log the rotated array.
+// function rotateArray(arr, k) {
+//     k = k % arr.length;
+//     return [...arr.slice(-k), ...arr.slice(0, -k)];
+//   }
   
-  let arrayToRotate = [1, 2, 3, 4, 5];
-  console.log(rotateArray(arrayToRotate, 2)); // Output: [4, 5, 1, 2, 3]
+//   let arrayToRotate = [1, 2, 3, 4, 5];
+//   console.log(rotateArray(arrayToRotate, 2)); // Output: [4, 5, 1, 2, 3]
   
-// Task 9: Write a function to merge two sorted arrays into one sorted array. Log the merged array.
-function mergeSortedArrays(arr1, arr2) {
-    let mergedArray = [];
-    let i = 0, j = 0;
-    while (i < arr1.length && j < arr2.length) {
-      if (arr1[i] < arr2[j]) {
-        mergedArray.push(arr1[i]);
-        i++;
-      } else {
-        mergedArray.push(arr2[j]);
-        j++;
-      }
-    }
-    while (i < arr1.length) mergedArray.push(arr1[i++]);
-    while (j < arr2.length) mergedArray.push(arr2[j++]);
-    return mergedArray;
-  }
+// // Task 9: Write a function to merge two sorted arrays into one sorted array. Log the merged array.
+// function mergeSortedArrays(arr1, arr2) {
+//     let mergedArray = [];
+//     let i = 0, j = 0;
+//     while (i < arr1.length && j < arr2.length) {
+//       if (arr1[i] < arr2[j]) {
+//         mergedArray.push(arr1[i]);
+//         i++;
+//       } else {
+//         mergedArray.push(arr2[j]);
+//         j++;
+//       }
+//     }
+//     while (i < arr1.length) mergedArray.push(arr1[i++]);
+//     while (j < arr2.length) mergedArray.push(arr2[j++]);
+//     return mergedArray;
+//   }
   
-  let arr1 = [1, 3, 5];
-  let arr2 = [2, 4, 6];
-  console.log(mergeSortedArrays(arr1, arr2)); // Output: [1, 2, 3, 4, 5, 6]
+//   let arr1 = [1, 3, 5];
+//   let arr2 = [2, 4, 6];
+//   console.log(mergeSortedArrays(arr1, arr2)); // Output: [1, 2, 3, 4, 5, 6]
   
-// Activity 5: Dynamic Programming (Optional)
+// // Activity 5: Dynamic Programming (Optional)
 
-// Task 10: Write a function to solve the Fibonacci sequence using dynamic programming. Log the Fibonacci numbers. 
-function fibonacci(n) {
-    let fib = [0, 1];
-    for (let i = 2; i <= n; i++) {
-      fib[i] = fib[i - 1] + fib[i - 2];
-    }
-    return fib.slice(1); // Skipping the first element (0)
-  }
+// // Task 10: Write a function to solve the Fibonacci sequence using dynamic programming. Log the Fibonacci numbers. 
+// function fibonacci(n) {
+//     let fib = [0, 1];
+//     for (let i = 2; i <= n; i++) {
+//       fib[i] = fib[i - 1] + fib[i - 2];
+//     }
+//     return fib.slice(1); // Skipping the first element (0)
+//   }
   
-  console.log(fibonacci(10)); // Output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+//   console.log(fibonacci(10)); // Output: [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
   
-// Task 11: Write a function to solve the knapsack problem using dynamic programming. Log the maximum value that can be obtained.
-function knapsack(values, weights, capacity) {
-    let n = values.length;
-    let dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
+// // Task 11: Write a function to solve the knapsack problem using dynamic programming. Log the maximum value that can be obtained.
+// function knapsack(values, weights, capacity) {
+//     let n = values.length;
+//     let dp = Array.from({ length: n + 1 }, () => Array(capacity + 1).fill(0));
   
-    for (let i = 1; i <= n; i++) {
-      for (let w = 0; w <= capacity; w++) {
-        if (weights[i - 1] <= w) {
-          dp[i][w] = Math.max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
-        } else {
-          dp[i][w] = dp[i - 1][w];
-        }
-      }
-    }
+//     for (let i = 1; i <= n; i++) {
+//       for (let w = 0; w <= capacity; w++) {
+//         if (weights[i - 1] <= w) {
+//           dp[i][w] = Math.max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+//         } else {
+//           dp[i][w] = dp[i - 1][w];
+//         }
+//       }
+//     }
   
-    return dp[n][capacity];
-  }
+//     return dp[n][capacity];
+//   }
   
-  let values = [60, 100, 120];
-  let weights = [10, 20, 30];
-  let capacity = 50;
-  console.log(knapsack(values, weights, capacity)); // Output: 220
+//   let values = [60, 100, 120];
+//   let weights = [10, 20, 30];
+//   let capacity = 50;
+//   console.log(knapsack(values, weights, capacity)); // Output: 220
   
+
+
+// Day 19: Regular Expressions
+
+// Tasks/Activities:
+
+// Activity 1: Basic Regular Expressions
+
+// Task 1: Write a regular expression to match a simple pattern (e.g., match all occurrences of the word "JavaScript in a string). Log the matches. 
+const text1 = "I love JavaScript. JavaScript is versatile.";
+const regexJavaScript = /JavaScript/g;
+const matchesJavaScript = text1.match(regexJavaScript);
+console.log(matchesJavaScript); // Output: ["JavaScript", "JavaScript"]
+
+// • Task 2: Write a regular expression to match all digits in a string. Log the matches.
+const text = "The year is 2024 and the time is 12:45.";
+const regex = /\d/g;
+const matches = text.match(regex);
+console.log(matches); // Output: ["2", "0", "2", "4", "1", "2", "4", "5"]
+
+// Activity 2: Character Classes and Quantifiers
+
+// Task 3: Write a regular expression to match all words in a string that start with a capital letter. Log the matches.
+const text3 = "JavaScript is a programming Language. Python is another Language.";
+const regexCapitalWords = /\b[A-Z][a-z]*\b/g;
+const matchesCapitalWords = text3.match(regexCapitalWords);
+console.log(matchesCapitalWords); // Output: ["JavaScript", "Language", "Python", "Language"]
+
+// Task 4: Write a regular expression to match all sequences of one or more digits in a string. Log the matches.
+const text4 = "The temperatures were 30, 45, and 50 degrees.";
+const regexDigitSequences = /\d+/g;
+const matchesDigitSequences = text4.match(regexDigitSequences);
+console.log(matchesDigitSequences); // Output: ["30", "45", "50"]
+
+// Activity 3: Grouping and Capturing
+
+// Task 5: Write a regular expression to capture the area code, central office code, and line number from a US phone number format (e.g.. (123) 456- 7890). Log the captures.
+const phoneNumber = "(123) 456-7890";
+const regexPhoneNumber = /\((\d{3})\)\s(\d{3})-(\d{4})/;
+const matchesPhoneNumber = phoneNumber.match(regexPhoneNumber);
+console.log(matchesPhoneNumber); // Output: ["(123) 456-7890", "123", "456", "7890"]
+
+// Task 6: Write a regular expression to capture the username and domain from an email address. Log the captures.
+const email = "example@domain.com";
+const regexEmail = /(\w+)@([\w.]+)/;
+const matchesEmail = email.match(regexEmail);
+console.log(matchesEmail); // Output: ["example@domain.com", "example", "domain.com"]
+
+// Activity 4: Assertions and Boundaries
+
+// Task 7: Write a regular expression to match a word only if it is at the beginning of a string. Log the matches.
+const textStart = "JavaScript is awesome.";
+const regexStart = /^JavaScript/;
+const matchesStart = textStart.match(regexStart);
+console.log(matchesStart); // Output: ["JavaScript"]
+
+// Task 8: Write a regular expression to match a word only if it is at the end of a string. Log the matches.
+const textEnd = "This is a sentence.";
+const regexEnd = /sentence\.$/;
+const matchesEnd = textEnd.match(regexEnd);
+console.log(matchesEnd); // Output: ["sentence."]
+
+// Activity 5: Practical Applications
+
+// Task 9: Write a regular expression to validate a simple password (must include at least one uppercase letter, one lowercase letter, one digit, and one special character). Log whether the password is valid. 
+const password = "Password123!";
+const regexPassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const isPasswordValid = regexPassword.test(password);
+console.log(isPasswordValid); // Output: true
+
+// Task 10: Write a regular expression to validate a URL. Log whether the URL is valid.
+const url = "https://www.example.com";
+const regexURL = /^(https?:\/\/)?([\w.-]+)+(:\d+)?(\/([\w._-]+)?)*\/?$/;
+const isURLValid = regexURL.test(url);
+console.log(isURLValid); // Output: true
